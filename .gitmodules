@@ -1,0 +1,3 @@
+[submodule "akihabara"]
+	path = akihabara
+	url = git://github.com/Akihabara/akihabara.git
