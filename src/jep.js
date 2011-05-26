@@ -124,20 +124,6 @@ function go() {
 	// Changes a tile in the map. It also adds smoke if asked.
 	maingame.setTileInMap=function(x,y,tile,smoke) {
 		help.setTileInMap(gbox.getCanvasContext("tileslayer"),tilemaps.map,x,y,tile);
-		if (smoke) {
-			var ts=gbox.getTiles(tilemaps.map.tileset);
-			gbox.hitAudio("explosion"); // Switch sound
-			maingame.addSmoke({x:x*ts.tilew,y:y*ts.tilew,h:ts.tileh,w:ts.tilew,hh:ts.tilehh,hw:ts.tilehw,camera:true});
-		}
-	}
-
-	// Add spreading smoke on an object
-	maingame.addSmoke=function(ob,color) {
-		// Since camera is not specified (will be into the initializator), is added on the spark instead from the created object
-		toys.generate.sparks.simple(ob,"sparks",null,{camera:true,animspeed:2,accy:-3,accx:-3,tileset:(color==null?"flame-white":color)});
-		toys.generate.sparks.simple(ob,"sparks",null,{camera:true,animspeed:2,accy:-3,accx:3,tileset:(color==null?"flame-white":color)});
-		toys.generate.sparks.simple(ob,"sparks",null,{camera:true,animspeed:2,accy:3,accx:-3,tileset:(color==null?"flame-white":color)});
-		toys.generate.sparks.simple(ob,"sparks",null,{camera:true,animspeed:2,accy:3,accx:3,tileset:(color==null?"flame-white":color)});
 	}
 
 	// Starts a dialogue
