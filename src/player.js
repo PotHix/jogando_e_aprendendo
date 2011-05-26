@@ -58,17 +58,11 @@ var Player = function(){
 		toys.topview.adjustZindex(this);
 		if (!this.stilltimer&&!this.killed) toys.topview.setFrame(this); // set the right animation frame (if not attacking)
 		if (!this.stilltimer&&!this.isPaused&&!maingame.gameIsHold()&&!this.killed)
-			if (gbox.keyIsHit("a"))
-				this.attack();
-			else if (gbox.keyIsHit("b")) {
+			if (gbox.keyIsHit("b")) {
 				var ahead=toys.topview.getAheadPixel(this,{distance:5});
 				ahead.group="walls";
 				ahead.call="doPlayerAction";
-				if (!toys.topview.callInColliding(this,ahead)) {// if any action is done
-					if (maingame.hud.getValue("weapon","frames").length>1)
-						gbox.hitAudio("default-menu-option");
-					maingame.hud.addValue("weapon","value",1);
-				}
+				toys.topview.callInColliding(this,ahead);
 			}
 		},
 
