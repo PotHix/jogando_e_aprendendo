@@ -19,9 +19,7 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 		  		scenes:[
-		  			{ speed:1, who:"noone", audio:"beep", talk:["The monster of the cave is","giving us a lot of troubles","as my husband says. But..."]},
-		  			{ speed:1, who:"noone", audio:"beep", talk:["I feel that something","strange is happening, in Kariko","village..." ]},
-		  			{ speed:1, who:"noone", audio:"beep", talk:["Keep your eyes wide open,", "Klin. Your enemy is very strong." ]},
+		  			{ speed:1, who:"noone", audio:"beep", talk:["Bom dia! Se esta interessado em","testar seus conhecimentos e","aprender novas coisas, siga para ", "a sala de aula logo acima."]}
 		  		]
 		  	}
 		},{
@@ -29,10 +27,7 @@
 			property:"intro",
 			value:{ font:"smalltut", skipkey:"a", esckey:"b", who: noface,
 		  		scenes:[
-		  			{ speed:1, who:"noone", audio:"beep", talk:["It is said that there is a terrible","Monster hiding on the north of","the little Kariko village that", "every 70 years slays Kariko","children."]},
-		  			{ speed:1, who:"noone", audio:"beep", talk:["All the strongest and fearless among","the villagers have been sent to the","the Dark Cave to try to kill the","Monster." ]},
-		  			{ speed:1, who:"noone", audio:"beep", talk:["Today is the 15th birthday of Klin,","a brave kid from that little village."]},
-		  			{ speed:1, who:"noone", audio:"beep", talk:["Klin received his first sword and","shield and is ready to put the word","end to this terrible legend." ]},
+		  			{ speed:1, who:"noone", audio:"beep", talk:["Seja bem vindo a vila do ","aprendizado. Aqui voce vai","conhecer novos amigos e", "aprender se divertindo."]}
 		  		]
 		  	}
 
@@ -67,7 +62,7 @@
 				 mapActions:function() {
 					var pl=gbox.getObject("player","player");
 					var ontile=help.getTileInMap(pl.x+pl.colx+pl.colhw,pl.y+pl.coly+pl.colhh,tilemaps.map,tilemaps._defaultblock,"map");
-					if (ontile==1) maingame.gotoLevel({level:"floor1",x:580,y:590,label:"Sala de aula"});
+					if (ontile==1) maingame.gotoLevel({level:"floor1",x:350,y:590,label:"Sala de aula"});
 				 },
 				tileIsSolid:function(obj,t){ return (t>9) }
 			}
