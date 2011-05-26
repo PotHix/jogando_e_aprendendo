@@ -64,6 +64,8 @@ function go() {
 		tilemaps.map.mapActions();
 	}
 
+	maingame.gameMenu = function(){return true;}
+
 	// Change level
 	maingame.changeLevel=function(level) {
 		// Cleanup the level
