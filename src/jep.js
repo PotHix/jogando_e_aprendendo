@@ -10,12 +10,6 @@ var maingame;
 var noface; // Is a fake "actor" in dialogues. The text is ever in the same place.
 var tilemaps={}, dialogues={};
 
-// In games like Zelda, object are alive also outside of the screen.
-// So, let's calculate a distance threshold from the camera
-function objectIsAlive(th) {
-	return trigo.getDistance(th,gbox.getCamera())<800;
-}
-
 function go() {
 	gbox.setGroups(["background","player","foes","walls","playerbullets","foesbullets","sparks","foreground","gamecycle"]);
 	gbox.setAudioChannels({bgmusic:{volume:0.8},sfx:{volume:1.0}});
@@ -80,7 +74,7 @@ function go() {
 		gbox.purgeGarbage(); // Since we're starting, we can purge all now
 
 		if (level==null)
-			level={level:"begin",x:300,y:270,introdialogue:true}; // First stage
+			level={level:"begin",x:300,y:270,introdialogue:false}; // First stage
 
 		// Dialogues are emptied - will be loaded by bundles. Cache is not needed - each bundle
 		// Contains full dialogues for the floor.
@@ -100,7 +94,7 @@ function go() {
 				toys.topview.spawn(gbox.getObject("player","player"),{x:level.x,y:level.y}); // Displace player
 				tilemaps.map.addObjects(); // Initialize map
 				if (level.introdialogue) // Eventually starts intro dialogue.
-			maingame.startDialogue("intro"); // game introduction, if needed
+					maingame.startDialogue("intro"); // game introduction, if needed
 			}
 		});
 	}
