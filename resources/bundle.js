@@ -39,15 +39,5 @@
 		{id:"npc",image:"sprites",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:382},
 
 		{id:"house",image:"sprites",tileh:90,tilew:90,tilerow:1,gapx:0,gapy:412}
-	],
-
-	// Audio resources
-	addAudio:[
-		["default-music",[audioserver+"intro.mp3",audioserver+"intro.ogg"],{channel:"bgmusic",loop:true}],
-		["ending",[audioserver+"ending.mp3",audioserver+"ending.ogg"],{channel:"bgmusic",loop:true}],
-		["cave",[audioserver+"cave.mp3",audioserver+"cave.ogg"],{channel:"bgmusic",loop:true}],
-
-		["default-menu-option",[audioserver+"select.mp3",audioserver+"select.ogg"],{channel:"sfx"}],
-		["default-menu-confirm",[audioserver+"start.mp3",audioserver+"start.ogg"],{channel:"sfx"}],
-	],
+	]
 }

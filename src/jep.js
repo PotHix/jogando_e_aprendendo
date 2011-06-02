@@ -28,13 +28,13 @@ function go() {
 			gbox.blitFade(gbox.getBufferContext(),{alpha:1,color:"rgb(150,150,150)"});
 			toys.logos.rising(this,"rising",{image:"logo",x:gbox.getScreenHW()-gbox.getImage("logo").hwidth,y:20,speed:1,gapx:250,reflex:0.1,audioreach:"coin"});
 		}
-	},
+	};
 
 	// No level intro animation
-	maingame.gameIntroAnimation=function() { return true; }
+	maingame.gameIntroAnimation=function() { return true; };
 
 	// No end level animation
-	maingame.endlevelIntroAnimation=function() { return true; }
+	maingame.endlevelIntroAnimation=function() { return true; };
 
 	// Level animation
 	maingame.levelIntroAnimation=function(reset) {
@@ -44,10 +44,10 @@ function go() {
 			gbox.blitFade(gbox.getBufferContext(),{alpha:1});
 			return toys.text.fixed(this,"default-blinker",gbox.getBufferContext(),{font:"big",text:maingame.getNextLevel().label,valign:gbox.ALIGN_MIDDLE,halign:gbox.ALIGN_CENTER,dx:0,dy:0,dw:gbox.getScreenW(),dh:gbox.getScreenH(),time:50});
 		}
-	}
+	};
 
 	// Game is ever over, if the player dies the first time. No life check, since is energy-based.
-	maingame.gameIsOver=function() { return true; }
+	maingame.gameIsOver=function() { return true; };
 
 	// Game ending
 	maingame.gameEndingIntroAnimation=function(reset){
@@ -57,14 +57,14 @@ function go() {
 			gbox.blitFade(gbox.getBufferContext(),{alpha:1});
 			return;
 		}
-	}
+	};
 
 	// Game events are decided by the map.
 	maingame.gameEvents=function() {
 		tilemaps.map.mapActions();
-	}
+	};
 
-	maingame.gameMenu = function(){return true;}
+	maingame.gameMenu = function(){return true;};
 
 	maingame.pressStartIntroAnimation = function(reset) {
 		if (reset) {
@@ -73,7 +73,7 @@ function go() {
 			toys.text.blink(this,"default-blinker",gbox.getBufferContext(),{font:"small",text:"PRESSIONE Z PARA COMECAR",valign:gbox.ALIGN_MIDDLE,halign:gbox.ALIGN_CENTER,dx:0,dy:Math.floor(gbox.getScreenH()/3),dw:gbox.getScreenW(),dh:Math.floor(gbox.getScreenH()/3)*2,blinkspeed:10});
 			return gbox.keyIsHit("a");
 		}
-	}
+	};
 
 	// Change level
 	maingame.changeLevel=function(level) {
@@ -108,7 +108,7 @@ function go() {
 					maingame.startDialogue("intro"); // game introduction, if needed
 			}
 		});
-	}
+	};
 
 	// Game initialization
 	maingame.initializeGame=function() {
@@ -135,7 +135,7 @@ function go() {
 	// Changes a tile in the map. It also adds smoke if asked.
 	maingame.setTileInMap=function(x,y,tile,smoke) {
 		help.setTileInMap(gbox.getCanvasContext("tileslayer"),tilemaps.map,x,y,tile);
-	}
+	};
 
 	// Starts a dialogue
 	maingame.startDialogue=function(id,pause) {
@@ -161,7 +161,7 @@ function go() {
 					}
 			});
 		}
-	}
+	};
 
 	// Add a still object. Are sprites that supports the z-index (houses, trees.) You can walk around these objects
 	maingame.addBlock=function(x,y,tileset,frame) {
@@ -184,25 +184,30 @@ function go() {
 				}
 			}
 		});
-	}
+	};
 
 	// Add a npc (Not Playing Charachter)
 	maingame.addNpc=function(x,y,still,dialogue,questid,talking,silence) {
 		// An easy way to create an NPC.
 		gbox.addObject(new Npc(x,y,still,dialogue,questid,talking,silence));
-	}
+	};
 	gbox.go();
 }
 
 // BOOTSTRAP
 gbox.onLoad(function () {
+	var mobile = navigator.userAgent.match(/iPhone/) || navigator.userAgent.match(/Android/);
+
 	help.akihabaraInit({title:"The Legend Of Sadness",splash:{footnotes:["Game for FSA","Game for FSA"]}});
 
 	// We are not going to use faces for dialogues
 	noface={ noone:{ x:10, y:170,box:{x:0,y:160,w:gbox.getScreenW(),h:60,alpha:0.5} } };
 
-	audioserver="resources/audio/"
+	audioserver="resources/audio/";
 
 	gbox.addBundle({file:"resources/bundle.js"});
+
+	if (!mobile) gbox.addBundle({file:"resources/bundle-audio.js"});
+
 	gbox.loadAll(go);
 }, false);

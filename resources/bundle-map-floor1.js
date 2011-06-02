@@ -1,8 +1,8 @@
 {
 	// Map BGM
-	addAudio:[
-		["map-bgm",[audioserver+"cave.mp3",audioserver+"cave.ogg"],{channel:"bgmusic",loop:true}],
-	],
+	//addAudio:[
+	//	["map-bgm",[audioserver+"cave.mp3",audioserver+"cave.ogg"],{channel:"bgmusic",loop:true}],
+	//],
 	// Map graphics
 	addImage:[
 		["tiles","resources/gfx-cave.png"],

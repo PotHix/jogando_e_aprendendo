@@ -1,8 +1,8 @@
 {
 	// Map BGM
-	addAudio:[
-		["map-bgm",[audioserver+"village.mp3",audioserver+"village.ogg"],{channel:"bgmusic",loop:true}],
-	],
+	//addAudio:[
+	//	["map-bgm",[audioserver+"village.mp3",audioserver+"village.ogg"],{channel:"bgmusic",loop:true}],
+	//],
 	// Map graphics
 	addImage:[
 		["tiles","resources/gfx-village.png"],
