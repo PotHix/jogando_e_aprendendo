@@ -1,18 +1,14 @@
 {
-	// Map BGM
 	//addAudio:[
 	//	["map-bgm",[audioserver+"village.mp3",audioserver+"village.ogg"],{channel:"bgmusic",loop:true}],
 	//],
-	// Map graphics
 	addImage:[
 		["tiles","resources/gfx-village.png"],
 	],
-	// Map Tileset
 	addTiles:[
 		{id:"tiles",image:"tiles",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:0},
 	],
 	setObject:[
-		// Dialogues on this map
 		{
 			object:"dialogues",
 			property:"wife",
@@ -30,8 +26,6 @@
 		  			{ speed:1, who:"noone", audio:"beep", talk:["Seja bem vindo a vila do ","aprendizado. Aqui voce vai","conhecer novos amigos e", "aprender se divertindo."]}
 		  		]
 		  	}
-
-		// Map data and actions
 		},{
 			object:"tilemaps",
 			property:"map",
