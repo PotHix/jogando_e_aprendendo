@@ -15,11 +15,39 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", audio:"beep", talk:[
-						"Aqui sera o lugar que voce vai",
-						"testar os seus conhecimentos e",
-						"aprender respondendo perguntas",
-						"inteligentes! Vamos comecar!"]
+					{ speed:1, who:"noone", audio:"beep",
+						talk:[
+							"Aqui sera o lugar que voce vai",
+							"testar os seus conhecimentos e",
+							"aprender respondendo perguntas",
+							"inteligentes! Vamos comecar!"
+						],
+						questions:[
+							{1:[
+								"Depois de gastar a metade de sua",
+								"de sua mesada, restou 27 reais.",
+								"Qual o valor da mesada?"
+							],
+							2:[
+								"Um tijolo pesa um quilo mais",
+								"meio quilo. Quanto pesa",
+								" um tijolo e meio?"
+							]}
+						],
+						answers:[
+							{1:[
+								"a) 64 reais"
+								"b) 54 reais",
+								"c) 50 reais",
+								"d) 46 reais"
+							],
+							2:[
+								"a) um kilo e meio"
+								"b) dois kilos",
+								"c) tres kilos",
+								"d) um kilo"
+							]}
+						]
 					}
 				]
 			}
