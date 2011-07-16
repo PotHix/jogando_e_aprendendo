@@ -15,38 +15,39 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", audio:"beep",
-						talk:[
+					{ speed:1, who:"noone", audio:"beep", challenge:[{
+						options:["a)", "b)", "c)", "d)"],
+						intro:[
 							"Aqui sera o lugar que voce vai",
 							"testar os seus conhecimentos e",
 							"aprender respondendo perguntas",
 							"inteligentes! Vamos comecar!"
 						],
-						questions:[
-							[
+						asking:[{
+							question:[
 								"Depois de gastar a metade de sua",
 								"de sua mesada, restou 27 reais.",
 								"Qual o valor da mesada?"
-							],[
+							],
+							answers:[
+								"64 reais", false,
+								"54 reais", true,
+								"50 reais", false,
+								"46 reais", false
+							]},{
+							question:[
 								"Um tijolo pesa um quilo mais",
 								"meio quilo. Quanto pesa",
-								" um tijolo e meio?"
+								"um tijolo e meio?"
+							],
+							answers:[
+								"um kilo e meio", true,
+								"dois kilos", false,
+								"tres kilos", false,
+								"um kilo", false
 							]
-						],
-						answers:[
-							[
-								"a) 64 reais",
-								"b) 54 reais",
-								"c) 50 reais",
-								"d) 46 reais"
-							],[
-								"a) um kilo e meio",
-								"b) dois kilos",
-								"c) tres kilos",
-								"d) um kilo"
-							]
-						]
-					}
+						}]
+				   }]}
 				]
 			}
 		},{
