@@ -85,7 +85,7 @@ function go() {
 		gbox.purgeGarbage(); // Since we're starting, we can purge all now
 
 		if (level==null)
-			level={level:"begin",x:300,y:270,introdialogue:false}; // First stage
+			level={level:"external",x:300,y:270,introdialogue:false}; // First stage
 
 		// Dialogues are emptied - will be loaded by bundles. Cache is not needed - each bundle
 		// Contains full dialogues for the floor.
@@ -97,7 +97,7 @@ function go() {
 
 		// Here the map is loaded. During the load time, the game is still.
 		gbox.addBundle({
-			file:"resources/bundle-map-"+level.level+".js",
+			file:"resources/bundle-"+level.level+".js",
 			onLoad:function(){ // This "onload" operation is triggered after everything is loaded.
 				help.finalizeTilemap(tilemaps.map); // Finalize the map into the bundle
 				gbox.createCanvas("tileslayer",{w:tilemaps.map.w,h:tilemaps.map.h}); // Prepare map's canvas
