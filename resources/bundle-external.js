@@ -11,7 +11,7 @@
 	setObject:[
 		{
 			object:"dialogues",
-			property:"wife",
+			property:"npc",
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 		  		scenes:[
@@ -51,7 +51,7 @@
 				 addObjects:function() {
 					gbox.playAudio("map-bgm");
 					maingame.addBlock(360,150,"house",0);
-					maingame.addNpc(150,180,[6],"wife",null,[6,7]);
+					maingame.addNpc(150,180,[2],"npc",null,[2,3]);
 				 },
 				 mapActions:function() {
 					var pl=gbox.getObject("player","player");

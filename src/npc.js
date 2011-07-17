@@ -3,7 +3,7 @@ var Npc = function(x,y,still,dialogue,questid,talking,silence){
 		questid:questid,
 		group:"walls",
 		tileset:"npc",
-		zindex:0, // Needed for zindexed objects
+		zindex:0,
 		x:x,
 		y:y,
 		myDialogue:dialogue,
@@ -17,12 +17,12 @@ var Npc = function(x,y,still,dialogue,questid,talking,silence){
 
 		doPlayerAction:function(sw) {
 			if (this.silence) toys.generate.audio.fadeOut(this,"background",null,{channel:"bgmusic"});
-			this.iamTalking=true; // go in talking mode
-			maingame.startDialogue(this.myDialogue); // Starts its dialogue. Is another object because of z-index
+			this.iamTalking=true;
+			maingame.startDialogue(this.myDialogue);
 		},
 
 		initialize:function() {
-			toys.topview.initialize(this); // Any particular initialization. Just the auto z-index
+			toys.topview.initialize(this);
 		},
 
 		first:function(by) {
@@ -39,9 +39,7 @@ var Npc = function(x,y,still,dialogue,questid,talking,silence){
 
 		blit:function() {
 			if (gbox.objectIsVisible(this)) {
-				// Shadowed object. First draws the shadow...
 				gbox.blitTile(gbox.getBufferContext(),{tileset:this.shadow.tileset,tile:this.shadow.tile,dx:this.x,dy:this.y+this.h-gbox.getTiles(this.shadow.tileset).tileh+4,camera:this.camera});
-				// Then the object. Notes that the y is y-z to have the "over the floor" effect.
 				gbox.blitTile(gbox.getBufferContext(),{tileset:this.tileset,tile:this.frame,dx:this.x,dy:this.y+this.z,camera:this.camera,fliph:this.fliph,flipv:this.flipv});
 			 }
 		 }

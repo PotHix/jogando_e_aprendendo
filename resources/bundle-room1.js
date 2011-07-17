@@ -82,13 +82,13 @@
 				addObjects:function() {
 					if (!tilemaps.queststatus["teacherstory"]) {
 						gbox.playAudio("map-bgm");
-						maingame.addNpc(350,200,[2],"teacher","teacherstory",[2,3],true);
+						maingame.addNpc(350,200,[0],"teacher","teacherstory",[0,1],true);
 					}
 				},
 				mapActions:function() {
 					var pl=gbox.getObject("player","player");
 					var ontile=help.getTileInMap(pl.x+pl.colx+pl.colhw,pl.y+pl.coly+pl.colhh,tilemaps.map,tilemaps._defaultblock,"map");
-					if (ontile==5) maingame.gotoLevel({level:"begin",x:330,y:90,label:"Vila do aprendizado"});
+					if (ontile==5) maingame.gotoLevel({level:"external",x:330,y:90,label:"Vila do aprendizado"});
 				},
 				tileIsSolid:function(obj,t){ return (t>9) }
 			}

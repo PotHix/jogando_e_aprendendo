@@ -17,7 +17,6 @@
 		{id:"lefthit",image:"sprites",tileh:40,tilew:20,tilerow:4,gapx:0,gapy:30},
 		{id:"uphit",image:"sprites",tileh:20,tilew:40,tilerow:4,gapx:0,gapy:70},
 		{id:"foe1",image:"sprites",tileh:30,tilew:30,tilerow:12,gapx:0,gapy:90},
-		{id:"shadows",image:"sprites",tileh:15,tilew:30,tilerow:12,gapx:0,gapy:210},
 		{id:"bonus",image:"sprites",tileh:20,tilew:20,tilerow:12,gapx:0,gapy:135},
 		{id:"hud",image:"sprites",tileh:20,tilew:20,tilerow:9,gapx:240,gapy:135},
 
@@ -30,14 +29,15 @@
 		{id:"door",image:"sprites",tileh:90,tilew:60,tilerow:1,gapx:0,gapy:200},
 		{id:"doorv",image:"sprites",tileh:90,tilew:30,tilerow:1,gapx:60,gapy:200},
 
-		{id:"chest",image:"sprites",tileh:30,tilew:30,tilerow:1,gapx:0,gapy:290},
 
 		{id:"leftarrow",image:"sprites",tileh:12,tilew:30,tilerow:2,gapx:0,gapy:320},
 		{id:"uparrow",image:"sprites",tileh:30,tilew:12,tilerow:2,gapx:0,gapy:332},
 
 		{id:"items",image:"sprites",tileh:20,tilew:20,tilerow:2,gapx:0,gapy:362},
-		{id:"npc",image:"sprites",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:382},
+		{id:"npc",image:"sprites",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:270},
 
-		{id:"house",image:"sprites",tileh:90,tilew:90,tilerow:1,gapx:0,gapy:412}
+		{id:"shadows",image:"sprites",tileh:15,tilew:30,tilerow:12,gapx:360,gapy:45},
+		{id:"chest",image:"sprites",tileh:30,tilew:30,tilerow:1,gapx:360,gapy:60},
+		{id:"house",image:"sprites",tileh:90,tilew:90,tilerow:1,gapx:270,gapy:0}
 	]
 }

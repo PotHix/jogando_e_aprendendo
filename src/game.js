@@ -1,13 +1,4 @@
-// ---
-// Copyright (c) 2010 Francesco Cottone, http://www.kesiev.com/
-// ---
-
-
-// Game-specific
-
-var audioserver;
-var maingame;
-var noface; // Is a fake "actor" in dialogues. The text is ever in the same place.
+var audioserver, maingame, noface;
 var tilemaps={}, dialogues={};
 
 function go() {
@@ -19,7 +10,6 @@ function go() {
 
 	maingame=gamecycle.createMaingame("gamecycle","gamecycle");
 
-	// Title intro
 	maingame.gameTitleIntroAnimation=function(reset) {
 		if (reset) {
 			gbox.playAudio("default-music");
@@ -46,7 +36,7 @@ function go() {
 		}
 	};
 
-	// Game is ever over, if the player dies the first time. No life check, since is energy-based.
+	// No gameover check
 	maingame.gameIsOver=function() { return true; };
 
 	// Game ending
@@ -64,7 +54,7 @@ function go() {
 		tilemaps.map.mapActions();
 	};
 
-	maingame.gameMenu = function(){return true;};
+	maingame.gameMenu = function(){ return true; };
 
 	maingame.pressStartIntroAnimation = function(reset) {
 		if (reset) {
@@ -75,49 +65,41 @@ function go() {
 		}
 	};
 
-	// Change level
 	maingame.changeLevel=function(level) {
 		// Cleanup the level
 		gbox.trashGroup("playerbullets");
 		gbox.trashGroup("foesbullets");
 		gbox.trashGroup("foes");
 		gbox.trashGroup("walls");
-		gbox.purgeGarbage(); // Since we're starting, we can purge all now
+		gbox.purgeGarbage();
 
-		if (level==null)
-			level={level:"external",x:300,y:270,introdialogue:false}; // First stage
+		if (level==null) level={level:"external",x:300,y:270,introdialogue:false};
 
-		// Dialogues are emptied - will be loaded by bundles. Cache is not needed - each bundle
-		// Contains full dialogues for the floor.
 		dialogues={};
 
-		// Map data is wiped too. Will be loaded by loadBundle. Other data in tilemaps is
-		// kept (i.e. quest status etc)
+		// Map data is wiped too. Will be loaded by loadBundle.
 		delete tilemaps.map;
 
-		// Here the map is loaded. During the load time, the game is still.
 		gbox.addBundle({
 			file:"resources/bundle-"+level.level+".js",
-			onLoad:function(){ // This "onload" operation is triggered after everything is loaded.
-				help.finalizeTilemap(tilemaps.map); // Finalize the map into the bundle
-				gbox.createCanvas("tileslayer",{w:tilemaps.map.w,h:tilemaps.map.h}); // Prepare map's canvas
-				gbox.blitTilemap(gbox.getCanvasContext("tileslayer"),tilemaps.map); // Render map on the canvas
-				toys.topview.spawn(gbox.getObject("player","player"),{x:level.x,y:level.y}); // Displace player
-				tilemaps.map.addObjects(); // Initialize map
-				if (level.introdialogue) // Eventually starts intro dialogue.
-					maingame.startDialogue("intro"); // game introduction, if needed
+			onLoad:function(){
+				help.finalizeTilemap(tilemaps.map);
+				gbox.createCanvas("tileslayer",{w:tilemaps.map.w,h:tilemaps.map.h});
+				gbox.blitTilemap(gbox.getCanvasContext("tileslayer"),tilemaps.map);
+				toys.topview.spawn(gbox.getObject("player","player"),{x:level.x,y:level.y});
+				tilemaps.map.addObjects();
+				if (level.introdialogue) maingame.startDialogue("intro");
 			}
 		});
 	};
 
 	// Game initialization
 	maingame.initializeGame=function() {
-		// Prepare hud
 		maingame.hud.setWidget("cash",{widget:"label",font:"small",value:0,minvalue:0,maxvalue:100,dx:gbox.getScreenW()-60,dy:gbox.getScreenH()-24,prepad:3,padwith:" ",clear:true});
 
 		tilemaps={
 			_defaultblock:100, // The block that is over the borders (a wall)
-			queststatus:{} // Every step the player does, is marked here (opened doors, sections cleared etc)
+			queststatus:{}
 		};
 
 		gbox.addObject({
@@ -132,7 +114,7 @@ function go() {
 		gbox.addObject(new Player());
 	};
 
-	// Changes a tile in the map. It also adds smoke if asked.
+	// Changes a tile in the map.
 	maingame.setTileInMap=function(x,y,tile,smoke) {
 		help.setTileInMap(gbox.getCanvasContext("tileslayer"),tilemaps.map,x,y,tile);
 	};
@@ -155,7 +137,7 @@ function go() {
 						if (dialogues[this.dialogueToRead].endgame) // If the dialogue is marked by "endgame"...
 							maingame.gameIsCompleted(); // The game is completed
 						else
-							gbox.getObject("player","player").doPause(false); // Unpause the player
+							gbox.getObject("player","player").doPause(false);
 							gbox.trashObject(this); // Trash the dialogue itself.
 						}
 					}
@@ -168,39 +150,34 @@ function go() {
 		gbox.addObject({
 			group:"walls",
 			tileset:tileset,
-			zindex:0, // Needed for zindexed objects
+			zindex:0,
 			x:x,
 			y:y,
 			frame:frame,
 
 			initialize:function() {
-				toys.topview.initialize(this); // Any particular initialization. Just the auto z-index
+				toys.topview.initialize(this);
 			},
 
 			blit:function() {
 				if (gbox.objectIsVisible(this)) {
-					// Then the object. Notes that the y is y-z to have the "over the floor" effect.
 					gbox.blitTile(gbox.getBufferContext(),{tileset:this.tileset,tile:this.frame,dx:this.x,dy:this.y+this.z,camera:this.camera,fliph:this.fliph,flipv:this.flipv});
 				}
 			}
 		});
 	};
 
-	// Add a npc (Not Playing Charachter)
 	maingame.addNpc=function(x,y,still,dialogue,questid,talking,silence) {
-		// An easy way to create an NPC.
 		gbox.addObject(new Npc(x,y,still,dialogue,questid,talking,silence));
 	};
 	gbox.go();
 }
 
-// BOOTSTRAP
 gbox.onLoad(function () {
 	var mobile = navigator.userAgent.match(/iPhone/) || navigator.userAgent.match(/Android/);
 
 	help.akihabaraInit({title:"Jogando e Aprendendo",splash:{footnotes:["Game for FSA","Game for FSA"]}});
 
-	// We are not going to use faces for dialogues
 	noface={ noone:{ x:10, y:170,box:{x:0,y:160,w:gbox.getScreenW(),h:60,alpha:0.5} } };
 
 	audioserver="resources/audio/";
