@@ -3,7 +3,7 @@
 	//	["map-bgm",[audioserver+"cave.mp3",audioserver+"cave.ogg"],{channel:"bgmusic",loop:true}],
 	//],
 	addImage:[
-		["tiles","resources/gfx-cave.png"]
+		["tiles","resources/school.png"]
 	],
 	addTiles:[
 		{id:"tiles",image:"tiles",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:0}

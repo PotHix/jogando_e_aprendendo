@@ -2,7 +2,7 @@
 	// Graphic resources.
 	addImage:[
 		["logo","resources/logo.png"],
-		["sprites","resources/cels.png"],
+		["sprites","resources/main_sprite.png"],
 		["font","resources/font.png"],
 		["fontbig","resources/fontbig.png"]
 	],

@@ -3,7 +3,7 @@
 	//	["map-bgm",[audioserver+"village.mp3",audioserver+"village.ogg"],{channel:"bgmusic",loop:true}],
 	//],
 	addImage:[
-		["tiles","resources/gfx-village.png"],
+		["tiles","resources/village.png"],
 	],
 	addTiles:[
 		{id:"tiles",image:"tiles",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:0},
