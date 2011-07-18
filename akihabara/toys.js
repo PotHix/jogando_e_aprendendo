@@ -1835,6 +1835,10 @@ var toys={
 						th.toys[id].sceneX=(th.toys[id].scene.dx?th.toys[id].scene.dx:0);
 						th.toys[id].sceneY=(th.toys[id].scene.dy?th.toys[id].scene.dy:0);
 						gbox.blitClear(gbox.getCanvasContext("dialogue-"+id));
+
+						// If the first talk is not found try to use the challenge intro
+						th.toys[id].scene.talk=(th.toys[id].scene.talk || th.toys[id].scene.challenge.intro);
+
 						if (th.toys[id].scene.slide) {
 							gbox.blitAll(gbox.getCanvasContext("dialogue-"+id),gbox.getImage(th.toys[id].scene.slide.image),{dx:th.toys[id].scene.slide.x,dy:th.toys[id].scene.slide.y});
 						}
@@ -1856,9 +1860,6 @@ var toys={
 						if (th.toys[id].scene.audiomusic) gbox.hitAudio(th.toys[id].scene.audiomusic);
 					}
 				}
-
-				var talk = (th.toys[id].scene.talk || th.toys[id].scene.challenge.intro)
-
 				if (!th.toys[id].ended) {
 					if (th.toys[id].wait) {
 						if (gbox.keyIsHit(data.esckey))
@@ -1878,17 +1879,17 @@ var toys={
 
 						// MOVING
 
-						if (talk) { // DIALOGUES
+						if (th.toys[id].scene.talk) { // DIALOGUES
 							if (th.toys[id].counter==th.toys[id].scene.speed) {
 								th.toys[id].letter++;
 								th.toys[id].counter=0;
 								if (th.toys[id].scene.audio&&!(th.toys[id].letter%3)) gbox.hitAudio(th.toys[id].scene.audio);
 								var tmp=th.toys[id].letter;
 								var row=0;
-								while (tmp>talk[row].length) {
-									tmp-=talk[row].length;
+								while (tmp>th.toys[id].scene.talk[row].length) {
+									tmp-=th.toys[id].scene.talk[row].length;
 									row++;
-									if (row==talk.length)  {
+									if (row==th.toys[id].scene.talk.length)  {
 										row=-1;
 										break;
 									}
@@ -1898,7 +1899,7 @@ var toys={
 										font:data.font,
 										dx:data.who[th.toys[id].scene.who].x,
 										dy:(data.who[th.toys[id].scene.who].y)+(row*th.toys[id].fd.tileh),
-										text:talk[row].substr(0,tmp)
+										text:th.toys[id].scene.talk[row].substr(0,tmp)
 									});
 								} else
 									th.toys[id].wait=true;
@@ -1971,7 +1972,7 @@ var toys={
 
 				// RENDERING
 
-				if (talk) { // DIALOGUES
+				if (th.toys[id].scene.talk) { // DIALOGUES
 					if (data.who[th.toys[id].scene.who].box)
 						gbox.blitRect(gbox.getBufferContext(),data.who[th.toys[id].scene.who].box);
 					if (data.who[th.toys[id].scene.who].tileset) {
