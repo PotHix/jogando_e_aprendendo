@@ -1879,6 +1879,8 @@ var toys={
 
 						// MOVING
 
+						if (th.toys[id].scene.challenge) { // QUESTIONS
+						}
 						if (th.toys[id].scene.talk) { // DIALOGUES
 							if (th.toys[id].counter==th.toys[id].scene.speed) {
 								th.toys[id].letter++;
