@@ -15,7 +15,7 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", audio:"beep", challenge:[{
+					{ speed:1, who:"noone", audio:"beep", challenge:{
 						options:["a)", "b)", "c)", "d)"],
 						intro:[
 							"Aqui sera o lugar que voce vai",
@@ -47,7 +47,7 @@
 								"um kilo", false
 							]
 						}]
-				   }]}
+				   }}
 				]
 			}
 		},{
