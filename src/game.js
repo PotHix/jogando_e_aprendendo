@@ -179,7 +179,7 @@ function go() {
 gbox.onLoad(function () {
 	var mobile = navigator.userAgent.match(/iPhone/) || navigator.userAgent.match(/Android/);
 
-	help.akihabaraInit({title:"Jogando e Aprendendo",splash:{footnotes:["Game for FSA","Game for FSA"]}});
+	help.akihabaraInit({title:"Jogando e Aprendendo",splash:{footnotes:["Trabalho de mídias interativas","Jogando e aprendendo"]}});
 
 	noface={ noone:{ x:10, y:170,box:{x:0,y:160,w:gbox.getScreenW(),h:60,alpha:0.5} } };
 
