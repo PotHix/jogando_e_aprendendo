@@ -44,20 +44,19 @@
 					[   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0],
 					[   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0],
 					[   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0],
-
-				  ],
-				 playerSpawnX:40,
-				 playerSpawnY:180,
-				 addObjects:function() {
+				],
+				playerSpawnX:40,
+				playerSpawnY:180,
+				addObjects:function() {
 					gbox.playAudio("map-bgm");
 					maingame.addBlock(360,150,"house",0);
 					maingame.addNpc(150,180,[2],"npc",null,[2,3]);
-				 },
-				 mapActions:function() {
+				},
+				mapActions:function() {
 					var pl=gbox.getObject("player","player");
 					var ontile=help.getTileInMap(pl.x+pl.colx+pl.colhw,pl.y+pl.coly+pl.colhh,tilemaps.map,tilemaps._defaultblock,"map");
 					if (ontile==1) maingame.gotoLevel({level:"room1",x:350,y:590,label:"Sala de aula"});
-				 },
+				},
 				tileIsSolid:function(obj,t){ return (t>9) }
 			}
 		}
