@@ -1835,10 +1835,6 @@ var toys={
 						th.toys[id].sceneX=(th.toys[id].scene.dx?th.toys[id].scene.dx:0);
 						th.toys[id].sceneY=(th.toys[id].scene.dy?th.toys[id].scene.dy:0);
 						gbox.blitClear(gbox.getCanvasContext("dialogue-"+id));
-
-						// If the first talk is not found try to use the challenge intro
-						th.toys[id].scene.talk=(th.toys[id].scene.talk || th.toys[id].scene.challenge.intro);
-
 						if (th.toys[id].scene.slide) {
 							gbox.blitAll(gbox.getCanvasContext("dialogue-"+id),gbox.getImage(th.toys[id].scene.slide.image),{dx:th.toys[id].scene.slide.x,dy:th.toys[id].scene.slide.y});
 						}
@@ -1880,6 +1876,30 @@ var toys={
 						// MOVING
 
 						if (th.toys[id].scene.challenge) { // QUESTIONS
+							if (th.toys[id].counter==th.toys[id].scene.speed) {
+								th.toys[id].letter++;
+								th.toys[id].counter=0;
+								if (th.toys[id].scene.audio&&!(th.toys[id].letter%3)) gbox.hitAudio(th.toys[id].scene.audio);
+								var tmp=th.toys[id].letter;
+								var row=0;
+								while (tmp>th.toys[id].scene.challenge.intro[row].length) {
+									tmp-=th.toys[id].scene.challenge.intro[row].length;
+									row++;
+									if (row==th.toys[id].scene.challenge.intro.length)  {
+										row=-1;
+										break;
+									}
+								}
+								if (row>=0) {
+									gbox.blitText(gbox.getCanvasContext("dialogue-"+id),{
+										font:data.font,
+										dx:data.who[th.toys[id].scene.who].x,
+										dy:(data.who[th.toys[id].scene.who].y)+(row*th.toys[id].fd.tileh),
+										text:th.toys[id].scene.challenge.intro[row].substr(0,tmp)
+									});
+								} else
+									th.toys[id].wait=true;
+							}
 						}
 						if (th.toys[id].scene.talk) { // DIALOGUES
 							if (th.toys[id].counter==th.toys[id].scene.speed) {
@@ -1974,7 +1994,10 @@ var toys={
 
 				// RENDERING
 
-				if (th.toys[id].scene.talk) { // DIALOGUES
+				if (th.toys[id].scene.challenge) { // QUESTIONS
+					gbox.blitRect(gbox.getBufferContext(),data.who[th.toys[id].scene.who].box);
+					gbox.blitAll(gbox.getBufferContext(),gbox.getCanvas("dialogue-"+id),{dx:0,dy:0});
+				} else if (th.toys[id].scene.talk) { // DIALOGUES
 					if (data.who[th.toys[id].scene.who].box)
 						gbox.blitRect(gbox.getBufferContext(),data.who[th.toys[id].scene.who].box);
 					if (data.who[th.toys[id].scene.who].tileset) {

@@ -124,7 +124,7 @@ function go() {
 
 	// Starts a dialogue
 	maingame.startDialogue=function(id,pause) {
-		if ((maingame.difficulty==0)||(!dialogues[id].istutorial)) { // dialogues marked as tutorial are shown only on easy. This flag is in the dialogue itself.
+		if ((maingame.difficulty===0)||(!dialogues[id].istutorial)) { // dialogues marked as tutorial are shown only on easy. This flag is in the dialogue itself.
 			gbox.addObject({
 				group:"foreground",
 				id:"dialogue",
