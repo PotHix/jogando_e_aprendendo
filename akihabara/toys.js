@@ -1858,10 +1858,24 @@ var toys={
 				}
 				if (!th.toys[id].ended) {
 					if (th.toys[id].wait) {
-						if (gbox.keyIsHit(data.esckey))
-							th.toys[id].ended=true;
-						else if (gbox.keyIsHit(data.skipkey))
-							th.toys[id].newscene=true;
+						if (th.toys[id].scene.challenge) {
+							if (gbox.keyIsHit(data.skipkey)){
+								var challenge = th.toys[id].scene.challenge;
+
+								challenge._status.askingState = (challenge._status.askingState == "question" ? "answers" : "question");
+
+								if (challenge._status.askingState == "question") challenge._status.asking++;
+								challenge._status.currentChallengeTalk = challenge.asking[challenge._status.asking];
+
+								th.toys[id].wait=false;
+								th.toys[id].letter=0;
+							}
+						} else {
+							if (gbox.keyIsHit(data.esckey))
+								th.toys[id].ended=true;
+							else if (gbox.keyIsHit(data.skipkey))
+								th.toys[id].newscene=true;
+						}
 					} else {
 
 						// SKIP KEYS
@@ -1876,16 +1890,26 @@ var toys={
 						// MOVING
 
 						if (th.toys[id].scene.challenge) { // QUESTIONS
+							if (!th.toys[id].scene.challenge._status){
+								th.toys[id].scene.challenge._status = {asking:-1, askingState:"intro", currentChallengeTalk:th.toys[id].scene.challenge.intro}
+							}
+
+							if (th.toys[id].scene.challenge._status.asking < 0){
+								th.toys[id].scene.challenge._status.currentChallengeTalk = th.toys[id].scene.challenge.intro;
+							} else {
+								th.toys[id].scene.challenge._status.currentChallengeTalk = th.toys[id].scene.challenge.asking[th.toys[id].scene.challenge._status.asking][th.toys[id].scene.challenge._status.askingState];
+							}
+
 							if (th.toys[id].counter==th.toys[id].scene.speed) {
 								th.toys[id].letter++;
 								th.toys[id].counter=0;
 								if (th.toys[id].scene.audio&&!(th.toys[id].letter%3)) gbox.hitAudio(th.toys[id].scene.audio);
 								var tmp=th.toys[id].letter;
 								var row=0;
-								while (tmp>th.toys[id].scene.challenge.intro[row].length) {
-									tmp-=th.toys[id].scene.challenge.intro[row].length;
+								while (tmp>th.toys[id].scene.challenge._status.currentChallengeTalk[row].length) {
+									tmp-=th.toys[id].scene.challenge._status.currentChallengeTalk[row].length;
 									row++;
-									if (row==th.toys[id].scene.challenge.intro.length)  {
+									if (row==th.toys[id].scene.challenge._status.currentChallengeTalk.length)  {
 										row=-1;
 										break;
 									}
@@ -1895,7 +1919,7 @@ var toys={
 										font:data.font,
 										dx:data.who[th.toys[id].scene.who].x,
 										dy:(data.who[th.toys[id].scene.who].y)+(row*th.toys[id].fd.tileh),
-										text:th.toys[id].scene.challenge.intro[row].substr(0,tmp)
+										text:th.toys[id].scene.challenge._status.currentChallengeTalk[row].substr(0,tmp)
 									});
 								} else
 									th.toys[id].wait=true;
