@@ -74,8 +74,8 @@ function go() {
 		gbox.purgeGarbage();
 
 		if (level==null){
-			level={level:"external",x:300,y:270,introdialogue:false};
-			//level={level:"room1",x:350,y:250,label:"Sala de aula"}; //FIXME
+			//level={level:"external",x:300,y:270,introdialogue:false};
+			level={level:"room1",x:350,y:250,label:"Sala de aula"}; //FIXME
 		}
 
 		dialogues={};
@@ -179,7 +179,7 @@ function go() {
 gbox.onLoad(function () {
 	var mobile = navigator.userAgent.match(/iPhone/) || navigator.userAgent.match(/Android/);
 
-	help.akihabaraInit({title:"Jogando e Aprendendo",splash:{footnotes:["Trabalho de mídias interativas","Jogando e aprendendo"]}});
+	help.akihabaraInit({title:"Jogando e Aprendendo",splash:{footnotes:["Trabalho de midias interativas","Jogando e aprendendo"]}});
 
 	noface={ noone:{ x:10, y:170,box:{x:0,y:160,w:gbox.getScreenW(),h:60,alpha:0.5} } };
 
