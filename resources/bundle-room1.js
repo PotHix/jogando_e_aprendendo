@@ -15,14 +15,17 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", audio:"beep", challenge:{
-						intro:[
-							"Aqui sera o lugar que voce vai",
-							"testar os seus conhecimentos e",
-							"aprender respondendo perguntas",
-							"inteligentes! Vamos comecar!"
-						],
-						asking:[{
+					{
+						speed:1, who:"noone", audio:"beep", asking:{
+							intro:[
+								"Aqui sera o lugar que voce vai",
+								"testar os seus conhecimentos e",
+								"aprender respondendo perguntas",
+								"inteligentes! Vamos comecar!"
+							]
+						}
+					},{
+						speed:1, who:"noone", audio:"beep", asking:{
 							options:["a)", false, "b)", true, "c)", false, "d)", false],
 							question:[
 								"Depois de gastar a metade de sua",
@@ -34,7 +37,9 @@
 								"b) 54 reais",
 								"c) 50 reais",
 								"d) 46 reais"
-							]},{
+							]},
+					},{
+						speed:1, who:"noone", audio:"beep", asking:{
 							options:["a)", true, "b)", false, "c)", false, "d)", false],
 							question:[
 								"Um tijolo pesa um quilo mais",
@@ -47,8 +52,8 @@
 								"c) tres kilos",
 								"d) um kilo"
 							]
-						}]
-					}}
+						}
+					}
 				]
 			}
 		},{
