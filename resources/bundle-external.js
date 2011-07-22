@@ -14,18 +14,19 @@
 			property:"npc",
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
-		  		scenes:[
-		  			{ speed:1, who:"noone", audio:"beep", talk:["Bom dia! Se esta interessado em","testar seus conhecimentos e","aprender novas coisas, siga para ", "a sala de aula logo acima."]}
-		  		]
-		  	}
+				scenes:[
+					{ speed:1, who:"noone", audio:"beep", talk:["Bom dia! Se esta interessado em","testar seus conhecimentos e","aprender novas coisas, siga para ", "a sala de aula logo acima."]},
+					{ speed:1, who:"noone", audio:"beep", talk:["Espero que tenha se preparado","pois assim voce vai aproveitar","melhor as perguntas e testar", "seus conhecimentos."]}
+				]
+			}
 		},{
 			object:"dialogues",
 			property:"intro",
-			value:{ font:"smalltut", skipkey:"a", esckey:"b", who: noface,
-		  		scenes:[
-		  			{ speed:1, who:"noone", audio:"beep", talk:["Seja bem vindo a vila do ","aprendizado. Aqui voce vai","conhecer novos amigos e", "aprender se divertindo."]}
-		  		]
-		  	}
+				value:{ font:"smalltut", skipkey:"a", esckey:"b", who: noface,
+				scenes:[
+					{ speed:1, who:"noone", audio:"beep", talk:["Seja bem vindo a vila do ","aprendizado. Aqui voce vai","conhecer novos amigos e", "aprender se divertindo."]}
+				]
+			}
 		},{
 			object:"tilemaps",
 			property:"map",

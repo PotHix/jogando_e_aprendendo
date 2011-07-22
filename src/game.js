@@ -57,6 +57,8 @@ function go() {
 	maingame.gameMenu = function(){ return true; };
 
 	maingame.pressStartIntroAnimation = function(reset) {
+		return true; //FIXME: development stuff
+
 		if (reset) {
 			toys.resetToy(this,"default-blinker");
 		} else {
@@ -74,8 +76,8 @@ function go() {
 		gbox.purgeGarbage();
 
 		if (level==null){
-			level={level:"external",x:300,y:270,introdialogue:false};
-			//level={level:"room1",x:350,y:250,label:"Sala de aula"}; //FIXME
+			//level={level:"external",x:300,y:270,introdialogue:false};
+			level={level:"room1",x:350,y:250,label:"Sala de aula"}; //FIXME
 		}
 
 		dialogues={};
