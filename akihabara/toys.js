@@ -1460,11 +1460,20 @@ var toys={
 				th.toys[id].selected=(opt.selected?opt.selected:0);
 				th.toys[id].ok=0;
 				var w=0, i;
+
 				for (i=0;i<opt.items.length;i++)
 					if (opt.items[i].length>w) w=opt.items[i].length;
-				gbox.createCanvas("menu-"+id,{w:w*fd.tilew,h:opt.items.length*fd.tileh});
-				for (i=0;i<opt.items.length;i++)
-					gbox.blitText(gbox.getCanvasContext("menu-"+id),{font:opt.font,text:opt.items[i],dx:0,dy:fd.tileh*i});
+
+				var createCanvasData, blitTextData;
+				createCanvasData = opt.horizontal ? {h:w*fd.tilew,w:gbox.getScreenH()} : {w:w*fd.tilew,h:opt.items.length*fd.tileh}
+
+				gbox.createCanvas("menu-"+id,createCanvasData);
+
+				for (i=0;i<opt.items.length;i++){
+					blitTextData = opt.horizontal ? {font:opt.font,text:opt.items[i],dy:0,dx:fd.tilew*i*4} : {font:opt.font,text:opt.items[i],dx:0,dy:fd.tileh*i}
+					gbox.blitText(gbox.getCanvasContext("menu-"+id),blitTextData);
+				}
+
 				th.toys[id].fh=fd.tileh;
 				th.toys[id].fw=fd.tilew;
 			}
@@ -1484,7 +1493,13 @@ var toys={
 				if (gbox.keyIsHit(opt.keys.cancel)) th.toys[id].ok=-1;
 			}
 			gbox.blitAll(gbox.getBufferContext(),gbox.getCanvas("menu-"+id),{dx:opt.x+th.toys[id].fw,dy:opt.y,camera:opt.camera});
-			if (!(th.toys[id].ok%2)) gbox.blitText(gbox.getBufferContext(),{font:opt.font,text:opt.selector,dx:opt.x,dy:opt.y+th.toys[id].selected*th.toys[id].fh,camera:opt.camera});
+
+			if (!th.toys[id].ok%2 && opt.horizontal){
+				gbox.blitText(gbox.getBufferContext(),{font:opt.font,text:opt.selector,dx:opt.x+th.toys[id].selected*(th.toys[id].fw*4),dy:opt.y,camera:opt.camera});
+			} else {
+				gbox.blitText(gbox.getBufferContext(),{font:opt.font,text:opt.selector,dx:opt.x,dy:opt.y+th.toys[id].selected*th.toys[id].fh,camera:opt.camera});
+			}
+
 			if (th.toys[id].ok) {
 				if (th.toys[id].ok>0)
 					if (th.toys[id].ok<10) {
@@ -1858,10 +1873,18 @@ var toys={
 				}
 				if (!th.toys[id].ended) {
 					if (th.toys[id].wait) {
-						if (gbox.keyIsHit(data.esckey))
-							th.toys[id].ended=true;
-						else if (gbox.keyIsHit(data.skipkey))
-							th.toys[id].newscene=true;
+						if (th.toys[id].scene.asking.answers) {
+							var answerOptions = []; for (var answer in th.toys[id].scene.asking.options)answerOptions.push(answer);
+							if (toys.ui.menu(this,"answerChooser",{font:"small",keys:{ up:"left",down:"right",ok:"a",cancel:"b" },selector:">",items:answerOptions,x:2,y:207,horizontal:true})) {
+								this.difficulty=toys.getToyValue(this,"answerChooser","selected");
+							}
+							if (gbox.keyIsHit(data.skipkey)) th.toys[id].newscene=true;
+						} else {
+							if (gbox.keyIsHit(data.esckey))
+								th.toys[id].ended=true;
+							else if (gbox.keyIsHit(data.skipkey))
+								th.toys[id].newscene=true;
+						}
 					} else {
 
 						// SKIP KEYS
