@@ -1494,7 +1494,7 @@ var toys={
 			}
 			gbox.blitAll(gbox.getBufferContext(),gbox.getCanvas("menu-"+id),{dx:opt.x+th.toys[id].fw,dy:opt.y,camera:opt.camera});
 
-			if (!th.toys[id].ok%2 && opt.horizontal){
+			if(opt.horizontal){
 				gbox.blitText(gbox.getBufferContext(),{font:opt.font,text:opt.selector,dx:opt.x+th.toys[id].selected*(th.toys[id].fw*4),dy:opt.y,camera:opt.camera});
 			} else {
 				gbox.blitText(gbox.getBufferContext(),{font:opt.font,text:opt.selector,dx:opt.x,dy:opt.y+th.toys[id].selected*th.toys[id].fh,camera:opt.camera});
@@ -1875,17 +1875,20 @@ var toys={
 					if (th.toys[id].wait) {
 						if (th.toys[id].scene.asking && th.toys[id].scene.asking.answers) {
 							var asking = th.toys[id].scene.asking;
-							toys.ui.menu(this,"answerChooser",{font:"small",keys:{ up:"left",down:"right",ok:"a"},selector:">",items:asking.options,x:2,y:207,horizontal:true})
-							if (asking.options[toys.getToyValue(this,"answerChooser","selected")] && asking.rightAnswerCallback)
-								asking.rightAnswerCallback();
+							toymenu = toys.ui.menu(th,"answerChooser",{font:"small",resetmenu:asking.resetmenu,keys:{ up:"left",down:"right",ok:"a"},selector:">",items:asking.options,x:2,y:207,horizontal:true});
+							asking.resetmenu=false;
 
-							if (gbox.keyIsHit(data.skipkey)) th.toys[id].newscene=true;
-						} else {
-							if (gbox.keyIsHit(data.esckey))
-								th.toys[id].ended=true;
-							else if (gbox.keyIsHit(data.skipkey))
-								th.toys[id].newscene=true;
+							if(toymenu == null){
+								if (asking.answers[toys.getToyValue(th,"answerChooser","selected")] && asking.rightAnswerCallback)
+									asking.rightAnswerCallback();
+								asking.resetmenu = true;
+							}
 						}
+
+						if (gbox.keyIsHit(data.esckey))
+							th.toys[id].ended=true;
+						else if (gbox.keyIsHit(data.skipkey))
+							th.toys[id].newscene=true;
 					} else {
 
 						// SKIP KEYS
