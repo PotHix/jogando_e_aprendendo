@@ -1873,11 +1873,12 @@ var toys={
 				}
 				if (!th.toys[id].ended) {
 					if (th.toys[id].wait) {
-						if (th.toys[id].scene.asking.answers) {
-							var answerOptions = []; for (var answer in th.toys[id].scene.asking.options)answerOptions.push(answer);
-							if (toys.ui.menu(this,"answerChooser",{font:"small",keys:{ up:"left",down:"right",ok:"a",cancel:"b" },selector:">",items:answerOptions,x:2,y:207,horizontal:true})) {
-								this.difficulty=toys.getToyValue(this,"answerChooser","selected");
-							}
+						if (th.toys[id].scene.asking && th.toys[id].scene.asking.answers) {
+							var asking = th.toys[id].scene.asking;
+							toys.ui.menu(this,"answerChooser",{font:"small",keys:{ up:"left",down:"right",ok:"a"},selector:">",items:asking.options,x:2,y:207,horizontal:true})
+							if (asking.options[toys.getToyValue(this,"answerChooser","selected")] && asking.rightAnswerCallback)
+								asking.rightAnswerCallback();
+
 							if (gbox.keyIsHit(data.skipkey)) th.toys[id].newscene=true;
 						} else {
 							if (gbox.keyIsHit(data.esckey))

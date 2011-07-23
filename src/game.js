@@ -57,6 +57,7 @@ function go() {
 	maingame.gameMenu = function(){ return true; };
 
 	maingame.pressStartIntroAnimation = function(reset) {
+		//return true; //FIXME: development stuff
 		if (reset) {
 			toys.resetToy(this,"default-blinker");
 		} else {
@@ -98,7 +99,7 @@ function go() {
 
 	// Game initialization
 	maingame.initializeGame=function() {
-		maingame.hud.setWidget("cash",{widget:"label",font:"small",value:0,minvalue:0,maxvalue:100,dx:gbox.getScreenW()-60,dy:gbox.getScreenH()-24,prepad:3,padwith:" ",clear:true});
+		maingame.hud.setWidget("score",{widget:"label",font:"small",value:0,minvalue:0,maxvalue:100,dx:gbox.getScreenW()-60,dy:gbox.getScreenH()-24,prepad:3,padwith:" ",clear:true});
 
 		tilemaps={
 			_defaultblock:100, // The block that is over the borders (a wall)
@@ -173,6 +174,11 @@ function go() {
 	maingame.addNpc=function(x,y,still,dialogue,questid,talking,silence) {
 		gbox.addObject(new Npc(x,y,still,dialogue,questid,talking,silence));
 	};
+
+	maingame.increaseScore=function(points){
+		pointsValue = points || 100;
+		maingame.hud.addValue("score","value",pointsValue);
+	}
 	gbox.go();
 }
 
