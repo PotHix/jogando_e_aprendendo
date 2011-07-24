@@ -176,7 +176,7 @@ function go() {
 	};
 
 	maingame.increaseScore=function(points){
-		pointsValue = points || 100;
+		pointsValue = points || 1;
 		maingame.hud.addValue("score","value",pointsValue);
 	}
 	gbox.go();

@@ -1875,7 +1875,7 @@ var toys={
 					if (th.toys[id].wait) {
 						if (th.toys[id].scene.asking && th.toys[id].scene.asking.answers) {
 							var asking = th.toys[id].scene.asking;
-							toymenu = toys.ui.menu(th,"answerChooser",{font:"small",resetmenu:asking.resetmenu,keys:{ up:"left",down:"right",ok:"a"},selector:">",items:asking.options,x:2,y:207,horizontal:true});
+							toymenu = toys.ui.menu(th,"answerChooser",{font:"small",resetmenu:asking.resetmenu,keys:{up:"left",down:"right",ok:"a"},selector:">",items:asking.options,x:2,y:207,horizontal:true});
 							asking.resetmenu=false;
 
 							if(toymenu == null){
