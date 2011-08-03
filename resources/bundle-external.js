@@ -51,7 +51,7 @@
 				addObjects:function() {
 					gbox.playAudio("map-bgm");
 					maingame.addBlock(360,150,"house",0);
-					maingame.addNpc(150,180,[2],"npc",null,[2,3]);
+					maingame.addNpc("teachers1",150,180,[2],"npc",null,[2,3]);
 				},
 				mapActions:function() {
 					var pl=gbox.getObject("player","player");

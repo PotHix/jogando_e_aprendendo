@@ -34,7 +34,8 @@
 		{id:"uparrow",image:"sprites",tileh:30,tilew:12,tilerow:2,gapx:0,gapy:332},
 
 		{id:"items",image:"sprites",tileh:20,tilew:20,tilerow:2,gapx:0,gapy:362},
-		{id:"npc",image:"sprites",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:270},
+		{id:"teachers1",image:"sprites",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:270},
+		{id:"teachers2",image:"sprites",tileh:30,tilew:30,tilerow:10,gapx:0,gapy:300},
 
 		{id:"shadows",image:"sprites",tileh:15,tilew:30,tilerow:12,gapx:360,gapy:45},
 		{id:"chest",image:"sprites",tileh:30,tilew:30,tilerow:1,gapx:360,gapy:60},

@@ -76,7 +76,7 @@ function go() {
 
 		if (level==null){
 			level={level:"external",x:300,y:270,introdialogue:false};
-			//level={level:"school",x:350,y:250,label:"Sala de aula"}; //FIXME
+			//level={level:"school",x:200,y:250,label:"Sala de aula"}; //FIXME
 		}
 
 		dialogues={};
@@ -171,8 +171,8 @@ function go() {
 		});
 	};
 
-	maingame.addNpc=function(x,y,still,dialogue,questid,talking,silence) {
-		gbox.addObject(new Npc(x,y,still,dialogue,questid,talking,silence));
+	maingame.addNpc=function(tileset, x,y,still,dialogue,questid,talking,silence) {
+		gbox.addObject(new Npc(tileset, x,y,still,dialogue,questid,talking,silence));
 	};
 
 	maingame.increaseScore=function(points){

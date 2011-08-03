@@ -1,8 +1,8 @@
-var Npc = function(x,y,still,dialogue,questid,talking,silence){
+var Npc = function(tileset,x,y,still,dialogue,questid,talking,silence){
 	return({
 		questid:questid,
 		group:"walls",
-		tileset:"npc",
+		tileset:tileset,
 		zindex:0,
 		x:x,
 		y:y,

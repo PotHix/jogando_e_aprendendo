@@ -173,7 +173,11 @@
 				addObjects:function() {
 					if (!tilemaps.queststatus["teacherstory"]) {
 						gbox.playAudio("map-bgm");
-						maingame.addNpc(200,150,[0],"history","teacherstory",[0,1],true);
+						maingame.addNpc("teachers1",200, 150,[0],"history","teacherstory",[0,1],true);
+						maingame.addNpc("teachers1",500, 150,[4],"math","teacherstory",[4,5],true);
+						maingame.addNpc("teachers1",800, 150,[6],"portuguese","teacherstory",[6,7],true);
+						maingame.addNpc("teachers1",1100,150,[8],"geography","teacherstory",[8,9],true);
+						maingame.addNpc("teachers2",1400,150,[8],"science","teacherstory",[8,9],true);
 					}
 				},
 				mapActions:function() {
