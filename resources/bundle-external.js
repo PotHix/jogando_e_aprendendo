@@ -56,7 +56,7 @@
 				mapActions:function() {
 					var pl=gbox.getObject("player","player");
 					var ontile=help.getTileInMap(pl.x+pl.colx+pl.colhw,pl.y+pl.coly+pl.colhh,tilemaps.map,tilemaps._defaultblock,"map");
-					if (ontile==1) maingame.gotoLevel({level:"school",x:350,y:590,label:"Sala de aula"});
+					if (ontile==1) maingame.gotoLevel({level:"school",x:200,y:510,label:"Sala de aula"});
 				},
 				tileIsSolid:function(obj,t){ return (t>9) }
 			}
