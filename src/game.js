@@ -76,7 +76,7 @@ function go() {
 
 		if (level==null){
 			level={level:"external",x:300,y:270,introdialogue:false};
-			//level={level:"room1",x:350,y:250,label:"Sala de aula"}; //FIXME
+			//level={level:"school",x:350,y:250,label:"Sala de aula"}; //FIXME
 		}
 
 		dialogues={};
