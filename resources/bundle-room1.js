@@ -11,7 +11,7 @@
 	setObject:[
 		{
 			object:"dialogues",
-			property:"teacher",
+			property:"teacher1",
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
@@ -68,7 +68,7 @@
 				addObjects:function() {
 					if (!tilemaps.queststatus["teacherstory"]) {
 						gbox.playAudio("map-bgm");
-						maingame.addNpc(350,200,[0],"teacher","teacherstory",[0,1],true);
+						maingame.addNpc(350,200,[0],"teacher1","teacherstory",[0,1],true);
 					}
 				},
 				mapActions:function() {
