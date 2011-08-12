@@ -200,7 +200,7 @@
 				mapActions:function() {
 					var pl=gbox.getObject("player","player");
 					var ontile=help.getTileInMap(pl.x+pl.colx+pl.colhw,pl.y+pl.coly+pl.colhh,tilemaps.map,tilemaps._defaultblock,"map");
-					if (ontile==5) maingame.gotoLevel({level:"external",x:330,y:90,label:"Vila do aprendizado"});
+					if (ontile==0) maingame.gotoLevel({level:"external",x:330,y:90,label:"Vila do aprendizado"});
 				},
 				tileIsSolid:function(obj,t){ return (t>19) }
 			}
