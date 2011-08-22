@@ -2,11 +2,11 @@ var audioserver, maingame, noface;
 var tilemaps={}, dialogues={};
 
 function go() {
-	gbox.setGroups(["background","player","foes","walls","playerbullets","foesbullets","sparks","foreground","gamecycle"]);
+	gbox.setGroups(["background","player","walls","foreground","gamecycle"]);
 	gbox.setAudioChannels({bgmusic:{volume:0.8},sfx:{volume:1.0}});
 
-	// player, walls, bullets and foes are under z-index layer
-	gbox.setRenderOrder(["background",gbox.ZINDEX_LAYER,"sparks","foreground","gamecycle"]);
+	// player, walls are under z-index layer
+	gbox.setRenderOrder(["background",gbox.ZINDEX_LAYER,"foreground","gamecycle"]);
 
 	maingame=gamecycle.createMaingame("gamecycle","gamecycle");
 
@@ -68,9 +68,6 @@ function go() {
 
 	maingame.changeLevel=function(level) {
 		// Cleanup the level
-		gbox.trashGroup("playerbullets");
-		gbox.trashGroup("foesbullets");
-		gbox.trashGroup("foes");
 		gbox.trashGroup("walls");
 		gbox.purgeGarbage();
 
