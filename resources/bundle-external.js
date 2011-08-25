@@ -22,7 +22,7 @@
 		},{
 			object:"dialogues",
 			property:"intro",
-				value:{ font:"smalltut", skipkey:"a", esckey:"b", who: noface,
+				value:{ font:"smalltut", skipkey:"a", who: noface,
 				scenes:[
 					{ speed:1, who:"noone", audio:"beep", talk:["Seja bem vindo a vila do aprendizado.","Utilize X para iniciar um dialogo, ", "e Z para prosseguir. E bons estudos!"]}
 				]
