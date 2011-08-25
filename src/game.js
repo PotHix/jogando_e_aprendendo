@@ -72,7 +72,7 @@ function go() {
 		gbox.purgeGarbage();
 
 		if (level==null){
-			level={level:"external",x:300,y:270,introdialogue:true};
+			level={level:"external",x:330,y:250,introdialogue:true};
 			//level={level:"school",x:200,y:250,label:"Escola"}; //FIXME
 		}
 
