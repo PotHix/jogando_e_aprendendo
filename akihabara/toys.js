@@ -1885,20 +1885,30 @@ var toys={
 							}
 						}
 
-						if (gbox.keyIsHit(data.esckey))
-							th.toys[id].ended=true;
-						else if (gbox.keyIsHit(data.skipkey))
-							th.toys[id].newscene=true;
+						if (gbox.keyIsHit(data.esckey)){
+							if (!th.toys[id].scene.asking) th.toys[id].ended=true;
+							if (th.toys[id].scene.asking && th.toys[id].scene.asking.intro){
+								th.toys[id].ended=true;
+							}
+						}
+						else if (gbox.keyIsHit(data.skipkey)){
+								th.toys[id].newscene=true;
+						}
 					} else {
 
 						// SKIP KEYS
 
-						if (gbox.keyIsHit(data.esckey))
-							th.toys[id].ended=true;
-						else if (gbox.keyIsHold(data.skipkey))
+						if (gbox.keyIsHit(data.esckey)){
+							if (!th.toys[id].scene.asking) th.toys[id].ended=true;
+							if (th.toys[id].scene.asking && th.toys[id].scene.asking.intro){
+								th.toys[id].ended=true;
+							}
+						} else if (gbox.keyIsHold(data.skipkey)){
 							th.toys[id].counter=th.toys[id].scene.speed;
-						else
+						}
+						else {
 							th.toys[id].counter++;
+						}
 
 						// MOVING
 
