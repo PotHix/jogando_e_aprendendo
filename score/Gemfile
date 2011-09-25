@@ -1,0 +1,7 @@
+source :rubygems
+
+gem "sinatra"
+
+group :test do
+  gem "httparty"
+end
