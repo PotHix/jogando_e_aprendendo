@@ -10,6 +10,13 @@ function go() {
 
 	maingame=gamecycle.createMaingame("gamecycle","gamecycle");
 
+	// External resources urls
+	maingame.external_resources = {
+		active:false,
+		score:"http://localhost:4567/"
+		//score:"http://score.jogandoeaprendendo.com.br/"
+	};
+
 	maingame.gameTitleIntroAnimation=function(reset) {
 		if (reset) {
 			gbox.playAudio("default-music");
@@ -96,6 +103,7 @@ function go() {
 
 	// Game initialization
 	maingame.initializeGame=function() {
+		if (maingame.external_resources.active) maingame.playerName = prompt("Qual seu nome?");
 		maingame.hud.setWidget("score",{widget:"label",font:"small",value:0,minvalue:0,maxvalue:100,dx:gbox.getScreenW()-60,dy:gbox.getScreenH()-24,prepad:3,padwith:" ",clear:true});
 
 		tilemaps={
@@ -175,6 +183,16 @@ function go() {
 	maingame.increaseScore=function(points){
 		pointsValue = points || 1;
 		maingame.hud.addValue("score","value",pointsValue);
+
+		if (maingame.external_resources.score){
+			params = maingame.playerName + "/score/" + pointsValue;
+			$.ajax({
+				type: "POST",
+				dataType:"json",
+				data: {player: maingame.playerName, score: pointsValue},
+				url: maingame.external_resources.score + params,
+			});
+		}
 	}
 	gbox.go();
 }
