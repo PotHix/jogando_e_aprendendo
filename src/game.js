@@ -184,7 +184,7 @@ function go() {
 		pointsValue = points || 1;
 		maingame.hud.addValue("score","value",pointsValue);
 
-		if (maingame.external_resources.score){
+		if (maingame.external_resources.active){
 			params = maingame.playerName + "/score/" + pointsValue;
 			$.ajax({
 				type: "POST",
