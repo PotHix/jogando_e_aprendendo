@@ -1879,8 +1879,10 @@ var toys={
 							asking.resetmenu=false;
 
 							if(toymenu == null){
-								if (asking.answers[toys.getToyValue(th,"answerChooser","selected")] && asking.rightAnswerCallback)
+								if (asking.answers[toys.getToyValue(th,"answerChooser","selected")] && asking.rightAnswerCallback){
 									asking.rightAnswerCallback();
+								}
+								th.toys["answerChooser"]["selected"]=-1; //Reseting the chosen answer
 								asking.resetmenu = true;
 							}
 						}
