@@ -4,7 +4,7 @@ require "yaml"
 require "json"
 
 class JepScore < Sinatra::Base
-  post "/:player/score/add" do
+  post "/scores/:player/add" do
     score = Score.new
     JSON.dump(params["player"] => score.add(params["player"]))
   end

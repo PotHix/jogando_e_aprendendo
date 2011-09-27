@@ -10,7 +10,7 @@ describe Score do
   end
 
   it "should add to score" do
-    r = HTTParty.post("http://localhost:4567/pothix/score/add", :headers => {"Content-Length" => "0"})
+    r = HTTParty.post("http://localhost:4567/scores/pothix/add", :headers => {"Content-Length" => "0"})
     r.code.must_equal 200
   end
 end
