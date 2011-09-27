@@ -110,7 +110,7 @@ function go() {
 
 	// Game initialization
 	maingame.initializeGame=function() {
-		maingame.playerName = maingame.external_resources.active) ? prompt("Qual seu nome?") : "";
+		maingame.playerName = maingame.external_resources.active ? prompt("Qual seu nome?") : "";
 		maingame.playerName.remove_accents();
 
 		maingame.hud.setWidget("score",{widget:"label",font:"small",value:0,minvalue:0,maxvalue:100,dx:gbox.getScreenW()-60,dy:gbox.getScreenH()-24,prepad:3,padwith:" ",clear:true});
