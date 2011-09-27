@@ -1,12 +1,12 @@
+# -*- coding: UTF-8 -*-
 require "sinatra"
 require "yaml"
 require "json"
 
 class JepScore < Sinatra::Base
-  post "/:player/score/:score" do
+  post "/:player/score/add" do
     score = Score.new
-    score.new_score_for(params["player"], params["score"])
-    JSON.dump(params["player"] => params["score"])
+    JSON.dump(params["player"] => score.add(params["player"]))
   end
 
   get "/" do
@@ -22,8 +22,9 @@ class Score
     @scores = YAML.load_file(PATH)
   end
 
-  def new_score_for(player, score)
-    scores["scores"][player] = score.to_i
+  def add(player)
+    score = scores["scores"][player]
+    scores["scores"][player] = score.to_i + 1
     write!
   end
 
