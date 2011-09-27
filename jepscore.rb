@@ -8,10 +8,6 @@ class JepScore < Sinatra::Base
     score = Score.new
     JSON.dump(params["player"] => score.add(params["player"]))
   end
-
-  get "/" do
-    "Aplicação de score do Jogando e Aprendendo!"
-  end
 end
 
 class Score
