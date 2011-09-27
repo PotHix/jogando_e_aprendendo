@@ -5,6 +5,6 @@ tar czvf score.tar.gz config.ru Gemfile* jepscore.rb .bundle vendor
 echo "==========> Copying the tar file"
 scp score.tar.gz pothix:~/score.jogandoeaprendendo.com.br
 echo "==========> Extracting the tar file"
-ssh pothix 'cd ~/score.jogandoeaprendendo.com.br/; tar xvf score.tar.gz; ln -fs bundle/ruby/1.8/gems/sinatra-1.2.6 vendor/sinatra; touch tmp/restart.txt'
+ssh pothix 'cd ~/score.jogandoeaprendendo.com.br/; tar xvf score.tar.gz; touch tmp/restart.txt'
 rm score.tar.gz
 echo "==========> Deploy OK"
