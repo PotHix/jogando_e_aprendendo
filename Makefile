@@ -11,13 +11,8 @@ retrieve:
 	$(CP) $(DROPBOXGAMEFODER)*.txt $(WORKINGGAMEFODER)
 	$(CP) $(DROPBOXGAMEFODER)*.png $(WORKINGGAMEFODER)
 deploy:
-	echo "==========> Bundling gems"
 	bundle install --deployment --without=test
-	echo "==========> Generating the tar file"
 	tar czvf vendor.tar.gz .bundle vendor
-	echo "==========> Copying the tar file"
-	scp score.tar.gz pothix:~/score.jogandoeaprendendo.com.br
-	echo "==========> Extracting the tar file"
+	scp vendor.tar.gz pothix:~/jogandoeaprendendo.com.br
 	ssh pothix 'cd ~/jogandoeaprendendo.com.br/; rm -rf vendor .bundle; tar xvf vendor.tar.gz; touch tmp/restart.txt'
 	rm vendor.tar.gz
-	echo "==========> Deploy OK"
