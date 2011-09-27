@@ -1,4 +1,4 @@
-require "sinatra"
+require "vendor/sinatra/lib/sinatra"
 require "yaml"
 require "json"
 
@@ -6,6 +6,10 @@ post "/:player/score/:score" do
   score = Score.new
   score.new_score_for(params["player"], params["score"])
   JSON.dump(params["player"] => params["score"])
+end
+
+get "/" do
+  "Aplicação de score do Jogando e Aprendendo!"
 end
 
 class Score
