@@ -12,9 +12,9 @@ function go() {
 
 	// External resources urls
 	maingame.external_resources = {
-		active:false,
-		score:"http://localhost:4567/"
-		//score:"http://score.jogandoeaprendendo.com.br/"
+		active:true,
+		score:"http://score.jogandoeaprendendo.com.br/"
+		//score:"http://localhost:4567/"
 	};
 
 	maingame.gameTitleIntroAnimation=function(reset) {
