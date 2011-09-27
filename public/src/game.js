@@ -1,6 +1,13 @@
 var audioserver, maingame, noface;
 var tilemaps={}, dialogues={};
 
+String.prototype.remove_accents = function(){
+	var th=this;
+	var accents={"a":/[ãáàâ]/g, "e":/[ẽéèê]/g, "i":/[ĩíìî]/g, "o":/[õóòô]/g, "u":/[ũúùû]/g, "c":/[ç]/g, "n":/[ñ]/g};
+	for(i in accents){ th=th.replace(accents[i], i) };
+	return th;
+}
+
 function go() {
 	gbox.setGroups(["background","player","walls","foreground","gamecycle"]);
 	gbox.setAudioChannels({bgmusic:{volume:0.8},sfx:{volume:1.0}});
@@ -103,7 +110,9 @@ function go() {
 
 	// Game initialization
 	maingame.initializeGame=function() {
-		if (maingame.external_resources.active) maingame.playerName = prompt("Qual seu nome?");
+		maingame.playerName = maingame.external_resources.active) ? prompt("Qual seu nome?") : "";
+		maingame.playerName.remove_accents();
+
 		maingame.hud.setWidget("score",{widget:"label",font:"small",value:0,minvalue:0,maxvalue:100,dx:gbox.getScreenW()-60,dy:gbox.getScreenH()-24,prepad:3,padwith:" ",clear:true});
 
 		tilemaps={
