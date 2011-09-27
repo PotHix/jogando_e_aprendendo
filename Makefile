@@ -10,7 +10,7 @@ send:
 retrieve:
 	$(CP) $(DROPBOXGAMEFODER)*.txt $(WORKINGGAMEFODER)
 	$(CP) $(DROPBOXGAMEFODER)*.png $(WORKINGGAMEFODER)
-deploy:
+vendor:
 	bundle install --deployment --without=test
 	tar czvf vendor.tar.gz .bundle vendor
 	scp vendor.tar.gz pothix:~/jogandoeaprendendo.com.br
