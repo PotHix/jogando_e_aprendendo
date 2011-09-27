@@ -1,4 +1,4 @@
-require "vendor/sinatra/lib/sinatra"
+require "sinatra"
 require "yaml"
 require "json"
 
