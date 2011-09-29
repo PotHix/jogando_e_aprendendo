@@ -2,11 +2,11 @@ var audioserver, maingame, noface;
 var tilemaps={}, dialogues={};
 
 String.prototype.remove_accents = function(){
-	var th=this;
+	var th=this, i;
 	var accents={"a":/[ãáàâ]/g, "e":/[ẽéèê]/g, "i":/[ĩíìî]/g, "o":/[õóòô]/g, "u":/[ũúùû]/g, "c":/[ç]/g, "n":/[ñ]/g};
-	for(i in accents){ th=th.replace(accents[i], i) };
+	for(i in accents){ th=th.replace(accents[i], i); }
 	return th;
-}
+};
 
 function go() {
 	gbox.setGroups(["background","player","walls","foreground","gamecycle"]);
@@ -110,8 +110,7 @@ function go() {
 
 	// Game initialization
 	maingame.initializeGame=function() {
-		maingame.playerName = maingame.external_resources.active ? prompt("Qual seu nome?") : "";
-		maingame.playerName.remove_accents();
+		maingame.playerName = (maingame.external_resources.active ? prompt("Qual seu nome?") : "").remove_accents();
 
 		maingame.hud.setWidget("score",{widget:"label",font:"small",value:0,minvalue:0,maxvalue:100,dx:gbox.getScreenW()-60,dy:gbox.getScreenH()-24,prepad:3,padwith:" ",clear:true});
 
@@ -199,10 +198,10 @@ function go() {
 				type: "POST",
 				dataType:"json",
 				data: {player: maingame.playerName, score: pointsValue},
-				url: maingame.external_resources.score + params,
+				url: maingame.external_resources.score + params
 			});
 		}
-	}
+	};
 	gbox.go();
 }
 
