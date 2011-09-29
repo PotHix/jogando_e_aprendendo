@@ -6,7 +6,12 @@ require "json"
 class JepScore < Sinatra::Base
   post "/scores/:player/add" do
     score = Score.new
-    JSON.dump(params["player"] => score.add(params["player"]))
+    JSON.dump(score.add params["player"])
+  end
+
+  get "/scores" do
+    score = Score.new
+    score.list
   end
 end
 
@@ -22,6 +27,13 @@ class Score
     score = scores["scores"][player]
     scores["scores"][player] = score.to_i + 1
     write!
+  end
+
+  def list
+    score_lines = scores["scores"].map do |player, score|
+      "<tr><td>#{player}</td><td>#{score}</td></tr>"
+    end
+    "<table><thead><th>Jogador</th><th>Pontos</th></thead><tbody>#{score_lines.join}</tbody></table>"
   end
 
   private
