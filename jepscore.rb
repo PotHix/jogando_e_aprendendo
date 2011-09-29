@@ -6,7 +6,8 @@ require "json"
 class JepScore < Sinatra::Base
   post "/scores/:player/add" do
     score = Score.new
-    JSON.dump(score.add params["player"])
+    score.add params["player"]
+    JSON.dump(score.scores["player"] => score.scores[params["player"]])
   end
 
   get "/scores" do
@@ -17,20 +18,21 @@ end
 
 class Score
   PATH = "#{File.expand_path(File.dirname(__FILE__))}/scores.yml"
-  attr_accessor :scores
+  attr_accessor :scores_file, :scores
 
   def initialize
-    @scores = YAML.load_file(PATH)
+    @scores_file = YAML.load_file(PATH)
+    @scores = @scores_file["scores"]
   end
 
   def add(player)
-    score = scores["scores"][player]
-    scores["scores"][player] = score.to_i + 1
+    score = scores[player]
+    scores[player] = score.to_i + 1
     write!
   end
 
   def list
-    score_lines = scores["scores"].map do |player, score|
+    score_lines = scores.map do |player, score|
       "<tr><td>#{player}</td><td>#{score}</td></tr>"
     end
     "<table><thead><th>Jogador</th><th>Pontos</th></thead><tbody>#{score_lines.join}</tbody></table>"
@@ -38,6 +40,6 @@ class Score
 
   private
   def write!
-    File.open(PATH, "w"){|f| YAML.dump(scores, f)}
+    File.open(PATH, "w"){|f| YAML.dump(scores_file, f)}
   end
 end
