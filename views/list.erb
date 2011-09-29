@@ -1,0 +1,14 @@
+<table>
+	<thead>
+		<th>Jogador</th>
+		<th>Pontos</th>
+	</thead>
+	<tbody>
+		<% @score_lines.each do |player, score| %>
+			<tr>
+				<td><%= player %></td>
+				<td><%= score %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

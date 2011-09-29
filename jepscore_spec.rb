@@ -15,4 +15,10 @@ describe Score do
     r = HTTParty.post(url, :headers => {"Content-Length" => "0"})
     r.code.must_equal 200
   end
+
+  it "should list scores" do
+    url = "#{URL}/scores"
+    r = HTTParty.get(url)
+    r.code.must_equal 200
+  end
 end

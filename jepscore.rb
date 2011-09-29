@@ -12,7 +12,8 @@ class JepScore < Sinatra::Base
 
   get "/scores" do
     score = Score.new
-    score.list
+    @score_lines = score.scores
+    erb :list
   end
 end
 
@@ -29,13 +30,6 @@ class Score
     score = scores[player]
     scores[player] = score.to_i + 1
     write!
-  end
-
-  def list
-    score_lines = scores.map do |player, score|
-      "<tr><td>#{player}</td><td>#{score}</td></tr>"
-    end
-    "<table><thead><th>Jogador</th><th>Pontos</th></thead><tbody>#{score_lines.join}</tbody></table>"
   end
 
   private
