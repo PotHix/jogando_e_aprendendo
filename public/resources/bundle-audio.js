@@ -7,5 +7,6 @@
 
 		["default-menu-option",[audioserver+"select.mp3",audioserver+"select.ogg"],{channel:"sfx"}],
 		["default-menu-confirm",[audioserver+"start.mp3",audioserver+"start.ogg"],{channel:"sfx"}],
+		["beep",[audioserver+"beep.mp3",audioserver+"beep.ogg"],{channel:"sfx"}],
 	]
 }

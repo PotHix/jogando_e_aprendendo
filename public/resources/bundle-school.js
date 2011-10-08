@@ -1,7 +1,7 @@
 {
-	//addAudio:[
-	//	["map-bgm",[audioserver+"cave.mp3",audioserver+"cave.ogg"],{channel:"bgmusic",loop:true}],
-	//],
+	addAudio:[
+		["map-bgm",[audioserver+"alchemist-40.mp3",audioserver+"lounge_living-40.ogg"],{channel:"bgmusic",loop:true}],
+	],
 	addImage:[
 		["tiles","resources/school.png"]
 	],

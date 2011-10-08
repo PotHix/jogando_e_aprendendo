@@ -1,7 +1,7 @@
 {
-	//addAudio:[
-	//	["map-bgm",[audioserver+"village.mp3",audioserver+"village.ogg"],{channel:"bgmusic",loop:true}],
-	//],
+	addAudio:[
+		["map-bgm",[audioserver+"farmland-40.mp3",audioserver+"farmland-40.ogg"],{channel:"bgmusic",loop:true}],
+	],
 	addImage:[
 		["tiles","resources/village.png"],
 	],
