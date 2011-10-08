@@ -15,8 +15,8 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", audio:"beep", talk:["Bom dia! Se esta interessado em","testar seus conhecimentos e","aprender novas coisas, siga para ", "a escola logo acima."]},
-					{ speed:1, who:"noone", audio:"beep", talk:["Espero que tenha se preparado","pois assim voce vai aproveitar","melhor as perguntas e testar", "seus conhecimentos."]}
+					{ speed:1, who:"noone", talk:["Bom dia! Se esta interessado em","testar seus conhecimentos e","aprender novas coisas, siga para ", "a escola logo acima."]},
+					{ speed:1, who:"noone", talk:["Espero que tenha se preparado","pois assim voce vai aproveitar","melhor as perguntas e testar", "seus conhecimentos."]}
 				]
 			}
 		},{
@@ -24,8 +24,8 @@
 			property:"intro",
 				value:{ font:"smalltut", skipkey:"a", who: noface,
 				scenes:[
-					//{ speed:1, who:"noone", audio:"beep", talk:["Oi "+maingame.playerName+"!", "Seja bem vindo a vila do aprendizado.","Utilize X para iniciar um dialogo, ", "e Z para prosseguir. E bons estudos!"]}
-					{ speed:1, who:"noone", audio:"beep", talk:["Seja bem vindo a vila do aprendizado.","Utilize X para iniciar um dialogo, ", "e Z para prosseguir. E bons estudos!"]}
+					//{ speed:1, who:"noone", talk:["Oi "+maingame.playerName+"!", "Seja bem vindo a vila do aprendizado.","Utilize X para iniciar um dialogo, ", "e Z para prosseguir. E bons estudos!"]}
+					{ speed:1, who:"noone", talk:["Seja bem vindo a vila do aprendizado.","Utilize X para iniciar um dialogo, ", "e Z para prosseguir. E bons estudos!"]}
 				]
 			}
 		},{
