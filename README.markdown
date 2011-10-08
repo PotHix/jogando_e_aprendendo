@@ -50,19 +50,24 @@ CRÉDITOS
 
 As musicas utilizadas são gratuitas e estão listadas abaixo, com as devidas licenças:
 
-Music track: Homeland Farmland
-Composer: Bjorn A. Lynne (PRS)
+**Music track:** Homeland Farmland
+
+**Composer:** Bjorn A. Lynne (PRS)
+
 License his music from: www.Shockwave-Sound.com
 
-Music track: The Alchemist
-Composer: Bjorn A. Lynne (PRS)
+
+**Music track:** The Alchemist
+
+**Composer:** Bjorn A. Lynne (PRS)
+
 License his music from: www.Shockwave-Sound.com
 
 
 DESENVOLVEDOR
 -------------
 
-* Willian Molinari - [@PotHix](http://twitter.com/PotHix)
+* Willian Molinari - [@PotHix](http://pothix.com)
 
 
 APOIO
@@ -71,4 +76,4 @@ APOIO
 * **Tratamento das imagens:** Lucas Fantinati - [@L_fantinati](http://twitter.com/L_fantinati)
 * **Perguntas:** Alan Machado - [@Alan_xD](http://twitter.com/Alan_xD)
 * **Divulgação:** Thales Castelar - [@ThalesArdana](http://twitter.com/ThalesArdana)
-* **Divulgação:** Leonardo Foroni - [@Leonardo](http://twitter.com/ThalesArdana)
+* **Divulgação:** Leonardo Foroni - [@Leonardo](http://twitter.com/LeonardoForoni)
