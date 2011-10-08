@@ -51,16 +51,11 @@ CRÉDITOS
 As musicas utilizadas são gratuitas e estão listadas abaixo, com as devidas licenças:
 
 **Music track:** Homeland Farmland
-
 **Composer:** Bjorn A. Lynne (PRS)
-
 License his music from: www.Shockwave-Sound.com
 
-
 **Music track:** The Alchemist
-
 **Composer:** Bjorn A. Lynne (PRS)
-
 License his music from: www.Shockwave-Sound.com
 
 
