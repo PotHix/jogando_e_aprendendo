@@ -1,6 +1,6 @@
 {
 	addAudio:[
-		["map-bgm",[audioserver+"alchemist-40.mp3",audioserver+"lounge_living-40.ogg"],{channel:"bgmusic",loop:true}],
+		["map-bgm",[audioserver+"alchemist-40.mp3",audioserver+"standby-40.ogg"],{channel:"bgmusic",loop:true}],
 	],
 	addImage:[
 		["tiles","resources/school.png"]
