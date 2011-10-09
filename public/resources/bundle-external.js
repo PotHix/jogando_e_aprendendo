@@ -1,7 +1,4 @@
 {
-	addAudio:[
-		["map-bgm",[audioserver+"farmland-40.mp3",audioserver+"farmland-40.ogg"],{channel:"bgmusic",loop:true}],
-	],
 	addImage:[
 		["tiles","resources/village.png"],
 	],
@@ -51,7 +48,7 @@
 				playerSpawnX:40,
 				playerSpawnY:180,
 				addObjects:function() {
-					gbox.playAudio("map-bgm");
+					gbox.playAudio("external-bgm");
 					maingame.addBlock(0,60,"house",0);
 					maingame.addNpc("teachers1",33,140,[2],"npc",null,[2,3]);
 				},

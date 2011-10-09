@@ -222,9 +222,11 @@ gbox.onLoad(function () {
 
 	gbox.addBundle({file:"resources/bundle.js"});
 
-	if (mobile) gbox.setCanAudio(false);
-
-	gbox.addBundle({file:"resources/bundle-audio.js"});
+	if (mobile){
+		gbox.setCanAudio(false);
+	} else {
+		gbox.addBundle({file:"resources/bundle-audio.js"});
+	}
 
 	gbox.loadAll(go);
 }, false);

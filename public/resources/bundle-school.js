@@ -1,7 +1,4 @@
 {
-	addAudio:[
-		["map-bgm",[audioserver+"alchemist-40.mp3",audioserver+"standby-40.ogg"],{channel:"bgmusic",loop:true}],
-	],
 	addImage:[
 		["tiles","resources/school.png"]
 	],
@@ -181,7 +178,7 @@
 				],
 				addObjects:function() {
 					if (!tilemaps.queststatus["teacherstory"]) {
-						gbox.playAudio("map-bgm");
+						gbox.playAudio("school-bgm");
 						maingame.addNpc("teachers1",200, 150,[0],"history","teacherstory",[0,1],true);
 						maingame.addNpc("teachers1",500, 150,[4],"math","teacherstory",[4,5],true);
 						maingame.addNpc("teachers1",800, 150,[6],"portuguese","teacherstory",[6,7],true);
