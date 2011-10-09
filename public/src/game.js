@@ -19,7 +19,7 @@ function go() {
 
 	// External resources urls
 	maingame.external_resources = {
-		active:false,
+		active:true,
 		score:"http://jogandoeaprendendo.com.br/scores/"
 		//score:"http://localhost:4567/"
 	};
