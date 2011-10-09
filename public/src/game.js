@@ -112,6 +112,9 @@ function go() {
 	maingame.initializeGame=function() {
 		maingame.playerName = (maingame.external_resources.active ? prompt("Qual seu nome?") : "").remove_accents();
 
+		// Avoiding spaces and accents on player name
+		maingame.playerName = maingame.playerName.remove_accents().replace(/\s/g,"_");
+
 		maingame.hud.setWidget("score",{widget:"label",font:"small",value:0,minvalue:0,maxvalue:100,dx:gbox.getScreenW()-60,dy:gbox.getScreenH()-24,prepad:3,padwith:" ",clear:true});
 
 		tilemaps={
