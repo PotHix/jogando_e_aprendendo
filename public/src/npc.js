@@ -16,7 +16,6 @@ var Npc = function(tileset,x,y,still,dialogue,questid,talking,silence){
 		},
 
 		doPlayerAction:function(sw) {
-			if (this.silence) toys.generate.audio.fadeOut(this,"background",null,{channel:"bgmusic"});
 			this.iamTalking=true;
 			maingame.startDialogue(this.myDialogue);
 		},
