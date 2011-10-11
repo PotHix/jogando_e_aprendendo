@@ -104,7 +104,7 @@
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, false, false, true], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) 5", "b) 9", "c) 7", "d) 8"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["Uma crianca nasce", "com quantos ossos?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[true, false, false, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) 350", "b) 352", "c) 225", "d) 206"]},
-					{ speed:1, who:"noone", asking: {question: true}, talk:["A atmosfera terrestre", "poussi quantas camadas?"]},
+					{ speed:1, who:"noone", asking: {question: true}, talk:["A atmosfera terrestre", "possui quantas camadas?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, false, true, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) 5", "b) 7", "c) 4", "d) 2"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["Nome dado ao aumento da temperatura", "no planeta Terra?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, true, false, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) Efeito Climatico", "b) Efeito Estufa", "c) Efeito Gormetral", "d) El Nino"]},
