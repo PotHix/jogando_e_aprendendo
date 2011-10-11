@@ -108,7 +108,7 @@
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, false, true, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) 5", "b) 7", "c) 4", "d) 2"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["Nome dado ao aumento da temperatura", "no planeta Terra?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, true, false, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) Efeito Climatico", "b) Efeito Estufa", "c) Efeito Gormetral", "d) El Nino"]},
-					{ speed:1, who:"noone", asking: {question: true}, talk:["Responsavel por queda de", "temperatura ou chuvas?"]},
+					{ speed:1, who:"noone", asking: {question: true}, talk:["Responsavel por queda de", "temperatura ou chuvas."]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, false, false, true], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) Frente Quente", "b) Frente Continental", "c) Frente Tropical", "d) Frente Fria"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["Qual e o planeta mais", "proximo do Sol?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[true, false, false, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) Mercurio", "b) Marte", "c) Venus", "d) Jupiter"]},
