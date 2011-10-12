@@ -58,7 +58,7 @@ var Player = function(){
 		toys.topview.adjustZindex(this);
 		if (!this.stilltimer&&!this.killed) toys.topview.setFrame(this); // set the right animation frame (if not attacking)
 		if (!this.stilltimer&&!this.isPaused&&!maingame.gameIsHold()&&!this.killed)
-			if (gbox.keyIsHit("b")) {
+			if (gbox.keyIsHit("a")) {
 				var ahead=toys.topview.getAheadPixel(this,{distance:5});
 				ahead.group="walls";
 				ahead.call="doPlayerAction";

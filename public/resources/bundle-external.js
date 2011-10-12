@@ -21,7 +21,7 @@
 			property:"intro",
 				value:{ font:"smalltut", skipkey:"a", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", talk:["Seja bem vindo a vila do aprendizado.","Utilize X para iniciar um dialogo, ", "e Z para prosseguir. E bons estudos!"]}
+					{ speed:1, who:"noone", talk:["Seja bem vindo a vila do aprendizado.","Utilize Z para iniciar e prosseguir", "um dialogo, e X para cancelar.","Bons estudos!"]}
 				]
 			}
 		},{

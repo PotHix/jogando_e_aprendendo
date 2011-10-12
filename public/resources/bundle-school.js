@@ -12,7 +12,7 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte X, senao aperte Z."]},
+					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte Z, senao aperte X."]},
 					{ speed:1, who:"noone", asking: {intro: true}, talk:["Muito bem! Entao vamos comecar", "as perguntas de Historia!"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["Qual foi o primeiro", "presidente do Brasil?."]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, false, true, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) Campos Sales", "b) Af. Pena", "c) Deo. da Fonseca", "d) Floriano Peix."]},
@@ -37,7 +37,7 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte X, senao aperte Z."]},
+					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte Z, senao aperte X."]},
 					{ speed:1, who:"noone", asking: {intro: true}, talk:["Muito bem! Entao vamos comecar", "as perguntas de Matematica!"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["Depois de gastar a metade de sua", "de sua mesada, restou 27 reais.", "Qual o valor da mesada?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, true, false, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) 64 reais", "b) 54 reais", "c) 50 reais", "d) 46 reais"]},
@@ -66,7 +66,7 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte X, senao aperte Z."]},
+					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte Z, senao aperte X."]},
 					{ speed:1, who:"noone", asking: {intro: true}, talk:["Muito bem! Entao vamos comecar", "as perguntas de Portugues!"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["Atilho serve para coletivo de que?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[false, false, false, true], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) gaivotas", "b) borboletas", "c) selos", "d) espiga de milho"]},
@@ -95,7 +95,7 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte X, senao aperte Z."]},
+					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte Z, senao aperte X."]},
 					{ speed:1, who:"noone", asking: {intro: true}, talk:["Muito bem! Entao vamos comecar", "as perguntas de Ciencias!"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["O HIV e um?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[true, false, false, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) virus", "b) bacteria", "c) passaro", "d) celula"]},
@@ -126,7 +126,7 @@
 			value:{
 				font:"small", skipkey:"a", esckey:"b", who: noface,
 				scenes:[
-					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte X, senao aperte Z."]},
+					{ speed:1, who:"noone", asking: {intro: true}, talk:["Quando iniciarmos as perguntas", "teremos que ir ate o fim. Se", "voce preferir reponde-las depois", "aperte Z, senao aperte X."]},
 					{ speed:1, who:"noone", asking: {intro: true}, talk:["Muito bem! Entao vamos comecar", "as perguntas de Geografia!"]},
 					{ speed:1, who:"noone", asking: {question: true}, talk:["Qual continente esta", "localizado ao sul da Europa?"]},
 					{ speed:1, who:"noone", asking: {options:["a)", "b)", "c)", "d)"], answers:[true, false, false, false], rightAnswerCallback:function(points){ maingame.increaseScore(points); }}, talk:["a) Africa", "b) Asia", "c) Oceania", "d) America"]},
