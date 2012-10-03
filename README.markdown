@@ -1,6 +1,14 @@
 Jogando e aprendendo
 ====================
 
+This game was made for an university project.
+The main idea is to help children to learn stuff simple things from the game.
+
+The game was made in portuguese (for the university) but if you want to translate is really easy.
+
+Advertising links
+-----------------
+
 * Game:     <http://jogandoeaprendendo.com.br/>
 * Blog:     <http://jogandoeaprendendo.wordpress.com/>
 * Email:    <contato@jogandoeaprendendo.com.br>
@@ -9,22 +17,24 @@ Jogando e aprendendo
 * Facebook: <http://www.facebook.com/pages/Jogando-e-Aprendendo/183885024996778>
 
 
-PLATAFORMAS SUPORTADAS
-----------------------
+Supported platforms
+-------------------
 
-Qualquer dispositivo que possua um navegador com suporte as funcionalidades do HTML5, especialmente Canvas.
-O jogo é sempre testado sobre a ultima versão dos navegadores:
+Any device with a modern browser that supports the new features of HTML5 (canvas).
+Tested on the latest versions of the following browsers:
 
-Firefox, Chrome, Opera e Internet Explorer.
+* Firefox
+* Chrome
+* Opera
+* Internet explorer
+* Chrome for Android
 
-Mantenha seu navegador na ultima versão que o jogo provavelmente funcionará.
-
-LICENÇA
+License
 -------
 
-Criado com a biblioteca Akihabara sobre a licença MIT License.
+Created with [Akihabara engine](http://github.com/Akihabara/akihabara) under the MIT License.
 
-Copyright (C) 2011 by jogando e aprendendo
+Copyright (C) 2012 Willian Molinari
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,10 +55,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-CRÉDITOS
---------
-
-As musicas utilizadas são gratuitas e estão listadas abaixo, com as devidas licenças:
+Song credits
+------------
 
 **Music track:** Homeland Farmland
 **Composer:** Bjorn A. Lynne (PRS)
@@ -59,16 +67,16 @@ License his music from: www.Shockwave-Sound.com
 License his music from: www.Shockwave-Sound.com
 
 
-DESENVOLVEDOR
--------------
+Developer
+---------
 
 * Willian Molinari - [@PotHix](http://pothix.com)
 
 
-APOIO
------
+Support
+-------
 
-* **Tratamento das imagens:** Lucas Fantinati - [@L_fantinati](http://twitter.com/L_fantinati)
-* **Perguntas:** Alan Machado - [@Alan_xD](http://twitter.com/Alan_xD)
-* **Divulgação:** Thales Castelar - [@ThalesArdana](http://twitter.com/ThalesArdana)
-* **Divulgação:** Leonardo Foroni - [@Leonardo](http://twitter.com/LeonardoForoni)
+* **Helped with the sprites:** Lucas Fantinati - [@L_fantinati](http://twitter.com/L_fantinati)
+* **Questions for the game:** Alan Machado - [@Alan_xD](http://twitter.com/Alan_xD)
+* **Advertising:** Thales Castelar - [@ThalesArdana](http://twitter.com/ThalesArdana)
+* **Advertising:** Leonardo Foroni - [@Leonardo](http://twitter.com/LeonardoForoni)
