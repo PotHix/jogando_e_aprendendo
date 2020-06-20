@@ -9,12 +9,9 @@ The game was made in portuguese (for the university) but if you want to translat
 Advertising links
 -----------------
 
-* Game:     <http://jogandoeaprendendo.com.br/>
-* Blog:     <http://jogandoeaprendendo.wordpress.com/>
-* Email:    <contato@jogandoeaprendendo.com.br>
-* Orkut:    <http://www.orkut.com.br/Main#Community?cmm=114755288>
+* Game:     <https://pothix.github.io/jogando_e_aprendendo>
+* Blog:     <https://jogandoeaprendendo.wordpress.com/>
 * Twitter:  <http://twitter.com/#!/JogaeAprende>
-* Facebook: <http://www.facebook.com/pages/Jogando-e-Aprendendo/183885024996778>
 
 
 Supported platforms
@@ -34,7 +31,7 @@ License
 
 Created with [Akihabara engine](http://github.com/Akihabara/akihabara) under the MIT License.
 
-Copyright (C) 2012 Willian Molinari
+Copyright (C) 2020 Willian Molinari
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
